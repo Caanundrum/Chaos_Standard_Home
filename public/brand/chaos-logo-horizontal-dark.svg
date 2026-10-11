@@ -1,72 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" fill="none">
-  <defs>
-    <linearGradient id="hzGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFE072"/>
-      <stop offset="50%" stop-color="#F5A623"/>
-      <stop offset="100%" stop-color="#D97706"/>
-    </linearGradient>
-    <linearGradient id="hzCyan" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#67E8F9"/>
-      <stop offset="100%" stop-color="#00E5FF"/>
-      <stop offset="100%" stop-color="#0284C7"/>
-    </linearGradient>
-    <linearGradient id="hzText" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="60%" stop-color="#F1F5F9"/>
-      <stop offset="100%" stop-color="#CBD5E1"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <!-- Clean, bold, iconic Chaos Standard horizontal logo (Dark) -->
+  <rect width="800" height="200" rx="20" fill="#090A0F"/>
+  <rect width="800" height="200" rx="20" stroke="#232736" stroke-width="1.5"/>
 
-  <!-- Dark Canvas Base (Transparent / Dark compatible) -->
-  <rect width="900" height="240" rx="24" fill="#090A0F" fill-opacity="0.95"/>
-  <rect width="900" height="240" rx="24" stroke="#F5A623" stroke-width="1.5" stroke-opacity="0.2"/>
-
-  <!-- Left: Emblem Mark (Centered at x=120, y=120, r=80) -->
-  <g transform="translate(120, 120)">
-    <!-- Outer Dial -->
-    <circle cx="0" cy="0" r="82" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="2 4"/>
-    <circle cx="0" cy="0" r="74" stroke="#F5A623" stroke-width="1.2" stroke-opacity="0.5"/>
-    <circle cx="0" cy="0" r="68" stroke="#00E5FF" stroke-width="0.8" stroke-opacity="0.3" stroke-dasharray="20 10"/>
-
-    <!-- Reticle axes -->
-    <line x1="0" y1="-86" x2="0" y2="-72" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
-    <line x1="0" y1="72" x2="0" y2="86" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
-    <line x1="-86" y1="0" x2="-72" y2="0" stroke="#00E5FF" stroke-width="2" stroke-linecap="round"/>
-    <line x1="72" y1="0" x2="86" y2="0" stroke="#00E5FF" stroke-width="2" stroke-linecap="round"/>
-
-    <!-- Chiral Delta Prism Core -->
-    <path d="M 0 -48 L 46 38 L 24 38 L 0 -8 L -24 38 L -14 38 L 0 10 Z" fill="url(#hzGold)"/>
-    <path d="M 46 38 L -46 38 L -36 20 L 24 20 L 0 -28 L 10 -28 Z" fill="url(#hzCyan)"/>
-    <path d="M -46 38 L 0 -48 L 10 -28 L -24 38 Z" fill="#1E293B" stroke="#00E5FF" stroke-width="0.8"/>
-
-    <!-- Singularity Aperture -->
-    <circle cx="0" cy="5" r="6" fill="#FFFFFF"/>
-    <circle cx="0" cy="5" r="3" fill="#090A0F"/>
-    <circle cx="0" cy="5" r="1.5" fill="#00E5FF"/>
+  <!-- Left: The Impossible Delta Mark (Centered at 110, 100) -->
+  <g transform="translate(110, 100) scale(0.68)">
+    <path d="M 0 -86 L 75 43 L 45 43 L 0 -34 L 15 -60 Z" fill="#F5A623"/>
+    <path d="M 75 43 L -75 43 L -60 17 L 30 17 L 45 43 Z" fill="#00E5FF"/>
+    <path d="M -75 43 L 0 -86 L 15 -60 L -30 17 L -60 17 Z" fill="#F8FAFC"/>
   </g>
 
-  <!-- Vertical Divider Wire -->
-  <line x1="230" y1="40" x2="230" y2="200" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <circle cx="230" cy="120" r="2.5" fill="#F5A623"/>
+  <!-- Vertical Divider Line -->
+  <line x1="200" y1="45" x2="200" y2="155" stroke="#232736" stroke-width="1.5"/>
 
-  <!-- Right: Typography & Hierarchy -->
-  <!-- Category Tracker -->
-  <text x="260" y="72" fill="#00E5FF" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="12" font-weight="700" letter-spacing="5">
-    INDEPENDENT GAME STUDIO // SYS.01
+  <!-- Right: Studio Typography -->
+  <text x="235" y="80" fill="#00E5FF" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="12" font-weight="700" letter-spacing="6">
+    INDEPENDENT GAME STUDIO
   </text>
-
-  <!-- Wordmark Main -->
-  <text x="258" y="132" fill="url(#hzText)" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="52" font-weight="800" letter-spacing="10">
+  <text x="233" y="132" fill="#F8FAFC" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="50" font-weight="800" letter-spacing="8">
     CHAOS STANDARD
-  </text>
-
-  <!-- Sub-Manifesto -->
-  <text x="260" y="172" fill="#94A3B8" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="500" letter-spacing="3">
-    WE TAKE MAKING RIDICULOUS THINGS EXTREMELY SERIOUSLY.
-  </text>
-
-  <!-- Technical Spec Ticks on Bottom Right -->
-  <text x="850" y="210" fill="#64748B" font-family="'Courier New', monospace" font-size="10" font-weight="600" letter-spacing="1" text-anchor="end">
-    VER 1.0.0 // BROWSER-NATIVE RUNTIME
   </text>
 </svg>

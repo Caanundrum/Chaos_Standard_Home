@@ -1,39 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
-  <defs>
-    <radialGradient id="favVoid" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1E2235"/>
-      <stop offset="100%" stop-color="#090A0F"/>
-    </radialGradient>
-    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFE072"/>
-      <stop offset="100%" stop-color="#F5A623"/>
-    </linearGradient>
-    <linearGradient id="favCyan" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#67E8F9"/>
-      <stop offset="100%" stop-color="#00E5FF"/>
-    </linearGradient>
-  </defs>
+  <!-- Clean, bold, iconic Chaos Standard favicon -->
+  <rect width="128" height="128" rx="28" fill="#090A0F"/>
+  <rect width="128" height="128" rx="28" stroke="#232736" stroke-width="1.5"/>
 
-  <rect width="128" height="128" rx="28" fill="url(#favVoid)"/>
-  <rect width="128" height="128" rx="28" stroke="#F5A623" stroke-width="1.5" stroke-opacity="0.3" fill="none"/>
-
-  <!-- Outer Ring -->
-  <circle cx="64" cy="64" r="50" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="2 4"/>
-  <circle cx="64" cy="64" r="44" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4"/>
-
-  <!-- Reticle Ticks -->
-  <line x1="64" y1="12" x2="64" y2="20" stroke="#00E5FF" stroke-width="2" stroke-linecap="round"/>
-  <line x1="64" y1="108" x2="64" y2="116" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
-  <line x1="12" y1="64" x2="20" y2="64" stroke="#00E5FF" stroke-width="2" stroke-linecap="round"/>
-  <line x1="108" y1="64" x2="116" y2="64" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
-
-  <!-- Impossible Chiral Prism Core -->
-  <path d="M 64 26 L 96 82 L 81 82 L 64 52 L 47 82 L 55 82 L 64 65 Z" fill="url(#favGold)"/>
-  <path d="M 96 82 L 32 82 L 39 70 L 81 70 L 64 40 L 71 40 Z" fill="url(#favCyan)"/>
-  <path d="M 32 82 L 64 26 L 71 40 L 47 82 Z" fill="#1E293B" stroke="#00E5FF" stroke-width="0.5"/>
-
-  <!-- Singularity -->
-  <circle cx="64" cy="61" r="5" fill="#FFFFFF"/>
-  <circle cx="64" cy="61" r="2.5" fill="#090A0F"/>
-  <circle cx="64" cy="61" r="1.2" fill="#00E5FF"/>
+  <!-- The Impossible Delta -->
+  <path d="M 64 16 L 109 95 L 90 95 L 64 47 L 73 30 Z" fill="#F5A623"/>
+  <path d="M 109 95 L 19 95 L 28 79 L 81 79 L 90 95 Z" fill="#00E5FF"/>
+  <path d="M 19 95 L 64 16 L 73 30 L 46 79 L 28 79 Z" fill="#F8FAFC"/>
 </svg>

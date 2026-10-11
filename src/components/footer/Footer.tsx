@@ -73,12 +73,14 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-3 text-sm text-[#94A3B8]">
               <li>
                 <a
-                  href="#games"
+                  href="https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => sound.playClick()}
-                  className="hover:text-[#F8FAFC] transition-colors flex items-center justify-between"
+                  className="hover:text-[#8B5CF6] transition-colors flex items-center justify-between group"
                 >
-                  <span>Hallucinated Dungeons</span>
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-[#8B5CF6]">AI RPG</span>
+                  <span className="group-hover:underline">Hallucinated Dungeons (Alpha 3)</span>
+                  <ExternalLink className="w-3 h-3 text-[#8B5CF6]" />
                 </a>
               </li>
               <li>

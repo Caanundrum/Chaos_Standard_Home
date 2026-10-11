@@ -25,7 +25,8 @@
 ### Game 1: Hallucinated Dungeons
 *Tabletop RPG Soul × Generative Fantasy Intelligence*  
 An ambitious AI-driven multiplayer fantasy role-playing experience inspired by classic pen-and-paper games. The bespoke AI Dungeon Master tracks deep world memory, authors dynamic encounters, and responds to player agency without ever feeling like a generic chatbot.  
-- **Status:** In Active Development
+- **Status:** Alpha 3 Staging Playable
+- **Live Staging URL:** [https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/](https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/)
 - **Genre:** AI Multiplayer Tabletop RPG
 - **Platform:** Browser-Native (Zero Install)
 
@@ -45,7 +46,7 @@ Our laboratory is actively incubating unannounced browser titles exploring uncon
 
 ## 3. The Studio Logo Family
 
-The Chaos Standard brand identity centers on the **"Anomalous Calibrator"**: a visual collision between a precision metric calibration dial (*"Standard"*) and an impossible chiral delta manifold (*"Chaos"*).
+The Chaos Standard brand identity centers on the **"Impossible Delta"**: a mathematically pure, non-Euclidean three-facet Penrose prism representing the collision of metric precision (*"Standard"*) with impossible reality-bending paradox (*"Chaos"*). It is bold, simple, and identifiable at a glance.
 
 Reusable vector assets are provided in [`public/brand/`](public/brand/):
 

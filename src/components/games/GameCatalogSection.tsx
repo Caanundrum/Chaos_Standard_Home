@@ -162,8 +162,9 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _
                   <Flame className="w-3.5 h-3.5 text-[#F5A623]" />
                   AI Tabletop RPG
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/5 border border-white/10 text-[#94A3B8]">
-                  In Active Development
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#8B5CF6]/20 border border-[#8B5CF6]/40 text-[#00E5FF] flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                  Alpha 3 Staging Playable
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/5 border border-white/10 text-[#94A3B8] flex items-center gap-1">
                   <Users className="w-3 h-3 text-[#00E5FF]" />
@@ -205,18 +206,24 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">
-                <button
-                  onClick={handleRollD20}
+                <a
+                  href="https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => sound.playClick()}
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] text-white font-bold text-sm hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#8B5CF6]/30 cursor-pointer"
                 >
-                  <Dice5 className={`w-4 h-4 ${isRolling ? 'animate-spin' : ''}`} />
-                  <span>Consult the DM (Roll d20)</span>
-                </button>
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Play Alpha 3 Staging</span>
+                </a>
 
-                <div className="font-mono text-xs text-[#94A3B8] flex items-center gap-1.5 px-3 py-2 rounded-lg bg-black/40 border border-white/5">
-                  <span className="w-2 h-2 rounded-full bg-[#8B5CF6] animate-pulse" />
-                  <span>Status: Active Production Phase</span>
-                </div>
+                <button
+                  onClick={handleRollD20}
+                  className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10 text-white font-semibold text-sm transition-all cursor-pointer"
+                >
+                  <Dice5 className={`w-4 h-4 ${isRolling ? 'animate-spin' : ''}`} />
+                  <span>Roll d20 Oracle</span>
+                </button>
               </div>
             </div>
 

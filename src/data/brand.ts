@@ -4,7 +4,7 @@ export const BRAND_ASSETS: BrandAsset[] = [
   {
     id: 'symbol-dark',
     name: 'Primary Studio Emblem (Dark Mode)',
-    description: 'The master Chaos Standard symbol. Features the anomalous chiral delta manifold intersecting the precision calibration dial, optimized for dark backgrounds.',
+    description: 'The master Chaos Standard symbol: The Impossible Delta. A bold, three-facet impossible geometric prism representing controlled chaos and non-Euclidean design. Clean, powerful, and instantly identifiable at any scale.',
     file: '/brand/chaos-symbol-dark.svg',
     category: 'Symbol',
     format: 'SVG',
@@ -13,7 +13,7 @@ export const BRAND_ASSETS: BrandAsset[] = [
   {
     id: 'symbol-light',
     name: 'Studio Emblem (Light Mode)',
-    description: 'High-contrast inverted emblem for print, editorial layouts, light stationery, and bright background integrations.',
+    description: 'High-contrast inverted Impossible Delta for print, editorial layouts, light stationery, and bright background integrations.',
     file: '/brand/chaos-symbol-light.svg',
     category: 'Symbol',
     format: 'SVG',
@@ -22,11 +22,11 @@ export const BRAND_ASSETS: BrandAsset[] = [
   {
     id: 'logo-horizontal-dark',
     name: 'Full Studio Lockup — Horizontal (Dark)',
-    description: 'The definitive studio header lockup: calibration emblem, architectural wordmark, studio identifier, and technical telemetry.',
+    description: 'The definitive studio horizontal lockup: the clean Impossible Delta paired with the architectural CHAOS STANDARD wordmark.',
     file: '/brand/chaos-logo-horizontal-dark.svg',
     category: 'Horizontal',
     format: 'SVG',
-    aspectRatio: '15:4'
+    aspectRatio: '4:1'
   },
   {
     id: 'logo-horizontal-light',

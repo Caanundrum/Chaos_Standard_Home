@@ -3,7 +3,7 @@ export interface GameInfo {
   title: string
   subtitle: string
   tagline: string
-  status: 'In Active Development' | 'Prototype Preview' | 'Classified / In Development'
+  status: 'Alpha 3 Staging Playable' | 'In Active Development' | 'Prototype Preview' | 'Classified / In Development'
   genre: string
   platform: string
   description: string

@@ -17,22 +17,17 @@ Chaos Standard is an independent game studio pioneering browser-native gaming. W
 
 ---
 
-## 2. THE LOGO MARK: "THE ANOMALOUS CALIBRATOR"
+## 2. THE LOGO MARK: "THE IMPOSSIBLE DELTA"
 
-The Chaos Standard mark represents the collision of **absolute metric precision** (*"Standard"*) with **quantum unpredictability** (*"Chaos"*).
+The Chaos Standard mark represents the collision of **absolute metric precision** (*"Standard"*) with **impossible optical paradox** (*"Chaos"*).
 
-### Mark Anatomy
-1. **The Calibration Dial (The Standard):**
-   - Concentric circular tracks with degree coordinates (000°, 090°, 180°, 270°).
-   - Cardinal reticle axes and precision tick marks.
-   - Represents scientific rigor, calibration targets, and deliberate craft.
-2. **The Chiral Delta Manifold (The Chaos):**
-   - An impossible Penrose-inspired geometric manifold composed of three interlocking facets:
-     - **Facet Alpha (Standard Gold):** Luminous metallic gold to amber gradient representing studio prestige and warmth.
-     - **Facet Beta (Spectral Cyan):** High-energy electric cyan gradient representing browser runtime clarity.
-     - **Facet Gamma (Deep Obsidian & Crimson):** High-contrast carbon blade with an anomaly crimson core fold.
-3. **The Singularity Aperture:**
-   - A pulsing white-hot focal point at the exact mathematical center of the mark, framing a micro-core aperture.
+### Mark Principles
+- **Simple & Iconic:** Zero background radar dials, zero degree numbers, zero tick marks. It has massive silhouette strength and is recognizable in 0.05 seconds from any distance.
+- **The Impossible Delta:** A mathematically pure, non-Euclidean Penrose prism composed of three bold, interlocking geometric facets:
+  - **Facet 1 (Standard Gold `#F5A623`):** Studio prestige, warmth, and deliberate craft.
+  - **Facet 2 (Spectral Cyan `#00E5FF`):** Browser-native runtime energy and clarity.
+  - **Facet 3 (Titanium White `#F8FAFC` / Obsidian `#0F172A`):** High-contrast structural anchor.
+- **The Concept:** Standard Euclidean geometry at every individual joint that assembles into an impossible paradox—the perfect visual metaphor for games with a questionable relationship with reality.
 
 ---
 
@@ -44,10 +39,10 @@ All assets are stored in vector SVG format in `/public/brand/` and are mirrored 
 | :--- | :--- | :--- | :--- |
 | **Primary Emblem (Dark)** | `chaos-symbol-dark.svg` | 1:1 | App icons, avatars, social media profiles, dark hero headers |
 | **Primary Emblem (Light)** | `chaos-symbol-light.svg` | 1:1 | Stationery, light print editorial, whitepaper covers |
-| **Horizontal Lockup (Dark)** | `chaos-logo-horizontal-dark.svg` | 15:4 | Studio website header, trailer lower thirds, press releases |
-| **Horizontal Lockup (Light)** | `chaos-logo-horizontal-light.svg` | 15:4 | Inverted light site themes, business cards, official documents |
-| **Stacked Lockup (Dark)** | `chaos-logo-stacked-dark.svg` | 6:7 | Promotional posters, game box art, launch billboards |
-| **Stacked Lockup (Light)** | `chaos-logo-stacked-light.svg` | 6:7 | Print posters, merchandise tags, physical packaging |
+| **Horizontal Lockup (Dark)** | `chaos-logo-horizontal-dark.svg` | 4:1 | Studio website header, trailer lower thirds, press releases |
+| **Horizontal Lockup (Light)** | `chaos-logo-horizontal-light.svg` | 4:1 | Inverted light site themes, business cards, official documents |
+| **Stacked Lockup (Dark)** | `chaos-logo-stacked-dark.svg` | 12:13 | Promotional posters, game box art, launch billboards |
+| **Stacked Lockup (Light)** | `chaos-logo-stacked-light.svg` | 12:13 | Print posters, merchandise tags, physical packaging |
 | **Micro Mark (Favicon)** | `chaos-mark-small.svg` | 1:1 | 16px to 32px browser tabs, system trays, tiny UI badges |
 | **"A Chaos Standard Game" Splash** | `chaos-splash-card.svg` | 16:9 | Mandatory 1080p splash screen for all game boot sequences |
 

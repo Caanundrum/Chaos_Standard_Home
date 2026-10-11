@@ -6,7 +6,7 @@ export const GAMES: GameInfo[] = [
     title: 'Hallucinated Dungeons',
     subtitle: 'Tabletop RPG Soul × Generative Fantasy Intelligence',
     tagline: 'An ambitious AI-driven multiplayer fantasy adventure where the Dungeon Master never sleeps, never runs out of dice, and occasionally has questionable sanity.',
-    status: 'In Active Development',
+    status: 'Alpha 3 Staging Playable',
     genre: 'AI Multiplayer Tabletop RPG',
     platform: 'Browser-Native (Zero Install)',
     description: 'Hallucinated Dungeons marries the collaborative storytelling of classic pen-and-paper roleplaying with a persistent, living fantasy world moderated by a bespoke AI Dungeon Master. Every dungeon crawl, tavern dispute, and rogue trap encounter is dynamically authored in real time, reacting to your party’s most unhinged tactical decisions without ever feeling like a generic text chatbot.',
@@ -21,7 +21,8 @@ export const GAMES: GameInfo[] = [
       accentColor: '#8B5CF6',
       bgGradient: 'from-[#171424] via-[#0E0C17] to-[#08070E]',
       borderGlow: 'hover:border-[#8B5CF6]/50 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)]'
-    }
+    },
+    previewUrl: 'https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/'
   },
   {
     id: 'do-not-press-submit',
