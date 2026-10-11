@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" fill="none">
+  <defs>
+    <radialGradient id="stackLightBg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </radialGradient>
+    <linearGradient id="stkLightGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="stkLightCyan" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="700" rx="36" fill="url(#stackLightBg)"/>
+  <rect width="600" height="700" rx="36" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Top Center: Emblem Mark -->
+  <g transform="translate(300, 240)">
+    <circle cx="0" cy="0" r="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 6"/>
+    <circle cx="0" cy="0" r="136" stroke="#D97706" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="0" cy="0" r="124" stroke="#0284C7" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="40 20"/>
+
+    <line x1="0" y1="-158" x2="0" y2="-134" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="134" x2="0" y2="158" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-158" y1="0" x2="-134" y2="0" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="134" y1="0" x2="158" y2="0" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+
+    <path d="M 0 -85 L 85 64 L 45 64 L 0 -14 L -45 64 L -25 64 L 0 20 Z" fill="url(#stkLightGold)"/>
+    <path d="M 85 64 L -85 64 L -65 30 L 45 30 L 0 -50 L 18 -50 Z" fill="url(#stkLightCyan)"/>
+    <path d="M -85 64 L 0 -85 L 18 -50 L -45 64 Z" fill="#0F172A"/>
+
+    <circle cx="0" cy="10" r="10" fill="#0F172A"/>
+    <circle cx="0" cy="10" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="10" r="2" fill="#D97706"/>
+  </g>
+
+  <!-- Horizontal Axis Guide -->
+  <line x1="120" y1="440" x2="480" y2="440" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="300" cy="440" r="3" fill="#D97706"/>
+
+  <!-- Subtitle Metadata -->
+  <text x="300" y="475" fill="#0284C7" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="12" font-weight="700" letter-spacing="6" text-anchor="middle">
+    INDEPENDENT GAME STUDIO
+  </text>
+
+  <!-- Wordmark Stacked Main -->
+  <text x="300" y="530" fill="#0F172A" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="44" font-weight="800" letter-spacing="12" text-anchor="middle">
+    CHAOS STANDARD
+  </text>
+
+  <!-- Studio Motto -->
+  <text x="300" y="575" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="500" letter-spacing="3" text-anchor="middle">
+    WE TAKE MAKING RIDICULOUS THINGS EXTREMELY SERIOUSLY.
+  </text>
+
+  <!-- Technical Spec Ticks -->
+  <text x="300" y="640" fill="#94A3B8" font-family="'Courier New', monospace" font-size="10" font-weight="600" letter-spacing="3" text-anchor="middle">
+    EST. 2025 // BROWSER RUNTIME // HIGH FIDELITY
+  </text>
+</svg>

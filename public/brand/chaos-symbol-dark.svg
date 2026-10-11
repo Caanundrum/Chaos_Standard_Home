@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="voidGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E2235" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#0E1017" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#07080B" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Facet Gradients: Precision Gold, Cyan Singularity, Deep Obsidian -->
+    <linearGradient id="facetGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE072"/>
+      <stop offset="50%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <linearGradient id="facetCyan" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#67E8F9"/>
+      <stop offset="50%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <linearGradient id="facetObsidian" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="facetCrimson" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF1E56"/>
+      <stop offset="100%" stop-color="#FA709A"/>
+    </linearGradient>
+
+    <!-- Core Singularity Glow -->
+    <radialGradient id="singularityGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#00E5FF"/>
+      <stop offset="60%" stop-color="#F5A623" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Void Base -->
+  <rect width="512" height="512" rx="104" fill="url(#voidGlow)"/>
+  <rect width="512" height="512" rx="104" stroke="#F5A623" stroke-width="2" stroke-opacity="0.15" fill="none"/>
+
+  <!-- Outer Calibration Dial: The Standard -->
+  <circle cx="256" cy="256" r="216" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="2 6"/>
+  <circle cx="256" cy="256" r="196" stroke="#F5A623" stroke-width="1.5" stroke-opacity="0.35"/>
+  <circle cx="256" cy="256" r="182" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="60 30"/>
+
+  <!-- Calibration Reticle Axes -->
+  <line x1="256" y1="36" x2="256" y2="72" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="256" y1="440" x2="256" y2="476" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="36" y1="256" x2="72" y2="256" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="440" y1="256" x2="476" y2="256" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Degree Ticks -->
+  <circle cx="256" cy="50" r="3" fill="#00E5FF"/>
+  <circle cx="462" cy="256" r="3" fill="#F5A623"/>
+  <circle cx="256" cy="462" r="3" fill="#00E5FF"/>
+  <circle cx="50" cy="256" r="3" fill="#F5A623"/>
+
+  <!-- Diagonal Sub-ticks -->
+  <line x1="110" y1="110" x2="128" y2="128" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="402" y1="110" x2="384" y2="128" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="110" y1="402" x2="128" y2="384" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="402" y1="402" x2="384" y2="384" stroke="#94A3B8" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Ambient Singularity Aura -->
+  <circle cx="256" cy="256" r="140" fill="url(#singularityGlow)" opacity="0.45"/>
+
+  <!-- Central Impossible Geometric Chiral Nexus: Chaos Meets Standard -->
+  <!-- Facet Alpha (Top-to-Right - Standard Gold) -->
+  <path d="M 256 100 
+           L 386 325 
+           L 326 325 
+           L 256 204 
+           L 186 325 
+           L 216 325 
+           L 256 256 Z" 
+        fill="url(#facetGold)" filter="url(#glowFilter)" opacity="0.95"/>
+
+  <!-- Facet Beta (Right-to-Left Base - Spectral Cyan) -->
+  <path d="M 386 325 
+           L 126 325 
+           L 156 273 
+           L 326 273 
+           L 256 152 
+           L 286 152 Z" 
+        fill="url(#facetCyan)" opacity="0.92"/>
+
+  <!-- Facet Gamma (Left-to-Apex - Deep Obsidian & Prismatic Edge) -->
+  <path d="M 126 325 
+           L 256 100 
+           L 286 152 
+           L 186 325 Z" 
+        fill="url(#facetObsidian)" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Impossible Ribbons Inner Overlap: The Paradox Fold -->
+  <path d="M 256 100 L 226 152 L 256 204 L 286 152 Z" fill="#FFE072" opacity="0.9"/>
+  <path d="M 326 273 L 386 325 L 340 348 L 296 296 Z" fill="#0284C7" opacity="0.85"/>
+  <path d="M 126 325 L 170 348 L 216 325 L 156 273 Z" fill="url(#facetCrimson)" opacity="0.9"/>
+
+  <!-- Central Singularity Core Aperture -->
+  <circle cx="256" cy="245" r="14" fill="#FFFFFF" filter="url(#glowFilter)"/>
+  <circle cx="256" cy="245" r="7" fill="#090A0F"/>
+  <circle cx="256" cy="245" r="3" fill="#00E5FF"/>
+
+  <!-- Micro Alignment Compass Points -->
+  <text x="256" y="90" fill="#F5A623" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">000°</text>
+  <text x="420" y="260" fill="#94A3B8" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">090°</text>
+  <text x="256" y="430" fill="#94A3B8" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">180°</text>
+  <text x="92" y="260" fill="#00E5FF" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">270°</text>
+</svg>

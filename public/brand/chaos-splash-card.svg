@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <radialGradient id="splGlow" cx="50%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#1E2338"/>
+      <stop offset="45%" stop-color="#0D0F18"/>
+      <stop offset="100%" stop-color="#040508"/>
+    </radialGradient>
+    <linearGradient id="splGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE072"/>
+      <stop offset="50%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="splCyan" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#67E8F9"/>
+      <stop offset="50%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="splWhite" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <filter id="splBloom" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Atmospheric Background -->
+  <rect width="1920" height="1080" fill="url(#splGlow)"/>
+
+  <!-- Subtle Precision Calibration Grid Lines -->
+  <line x1="0" y1="540" x2="1920" y2="540" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" stroke-dasharray="8 8"/>
+  <line x1="960" y1="0" x2="960" y2="1080" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" stroke-dasharray="8 8"/>
+
+  <!-- Corner Calibration Framing L-brackets -->
+  <path d="M 80 120 L 80 80 L 120 80" stroke="#F5A623" stroke-width="2" stroke-linecap="square"/>
+  <path d="M 1840 120 L 1840 80 L 1800 80" stroke="#F5A623" stroke-width="2" stroke-linecap="square"/>
+  <path d="M 80 960 L 80 1000 L 120 1000" stroke="#00E5FF" stroke-width="2" stroke-linecap="square"/>
+  <path d="M 1840 960 L 1840 1000 L 1800 1000" stroke="#00E5FF" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Top Metadata -->
+  <text x="960" y="240" fill="#00E5FF" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="20" font-weight="700" letter-spacing="12" text-anchor="middle">
+    A
+  </text>
+
+  <!-- Central Studio Mark (Centered at 960, 440) -->
+  <g transform="translate(960, 440)">
+    <circle cx="0" cy="0" r="190" stroke="#94A3B8" stroke-width="1.2" stroke-opacity="0.2" stroke-dasharray="4 8"/>
+    <circle cx="0" cy="0" r="170" stroke="#F5A623" stroke-width="1.8" stroke-opacity="0.45"/>
+    <circle cx="0" cy="0" r="154" stroke="#00E5FF" stroke-width="1.2" stroke-opacity="0.3" stroke-dasharray="50 25"/>
+
+    <line x1="0" y1="-200" x2="0" y2="-170" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="170" x2="0" y2="200" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-200" y1="0" x2="-170" y2="0" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+    <line x1="170" y1="0" x2="200" y2="0" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Chiral Delta Prism -->
+    <path d="M 0 -105 L 105 80 L 55 80 L 0 -18 L -55 80 L -30 80 L 0 24 Z" fill="url(#splGold)" filter="url(#splBloom)"/>
+    <path d="M 105 80 L -105 80 L -80 38 L 55 38 L 0 -62 L 22 -62 Z" fill="url(#splCyan)"/>
+    <path d="M -105 80 L 0 -105 L 22 -62 L -55 80 Z" fill="#1E293B" stroke="#00E5FF" stroke-width="1.2"/>
+
+    <!-- Singularity Aperture -->
+    <circle cx="0" cy="12" r="12" fill="#FFFFFF" filter="url(#splBloom)"/>
+    <circle cx="0" cy="12" r="6" fill="#090A0F"/>
+    <circle cx="0" cy="12" r="2.5" fill="#00E5FF"/>
+  </g>
+
+  <!-- Main Wordmark -->
+  <text x="960" y="740" fill="url(#splWhite)" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="76" font-weight="800" letter-spacing="24" text-anchor="middle">
+    CHAOS STANDARD
+  </text>
+
+  <!-- Bottom Lockup Subtitle -->
+  <text x="960" y="810" fill="#F5A623" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="28" font-weight="700" letter-spacing="14" text-anchor="middle">
+    GAME
+  </text>
+
+  <!-- Studio Motto Footer -->
+  <text x="960" y="930" fill="#64748B" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="500" letter-spacing="4" text-anchor="middle">
+    WE TAKE MAKING RIDICULOUS THINGS EXTREMELY SERIOUSLY.
+  </text>
+
+  <!-- Technical Verification Footnote -->
+  <text x="960" y="980" fill="#475569" font-family="'Courier New', monospace" font-size="12" letter-spacing="2" text-anchor="middle">
+    CALIBRATION SIGNATURE: 0xCS-GEN-ALPHA-01 // PRODUCTION RUNTIME
+  </text>
+</svg>

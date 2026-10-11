@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="lightBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </radialGradient>
+
+    <linearGradient id="lightGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+
+    <linearGradient id="lightCyan" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+
+    <linearGradient id="lightObsidian" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Light Base -->
+  <rect width="512" height="512" rx="104" fill="url(#lightBg)"/>
+  <rect width="512" height="512" rx="104" stroke="#CBD5E1" stroke-width="2" fill="none"/>
+
+  <!-- Outer Calibration Dial -->
+  <circle cx="256" cy="256" r="216" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 6"/>
+  <circle cx="256" cy="256" r="196" stroke="#D97706" stroke-width="1.5" stroke-opacity="0.6"/>
+  <circle cx="256" cy="256" r="182" stroke="#0284C7" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="60 30"/>
+
+  <!-- Reticle Axes -->
+  <line x1="256" y1="36" x2="256" y2="72" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="256" y1="440" x2="256" y2="476" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="36" y1="256" x2="72" y2="256" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="440" y1="256" x2="476" y2="256" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Degree Ticks -->
+  <circle cx="256" cy="50" r="3" fill="#0284C7"/>
+  <circle cx="462" cy="256" r="3" fill="#D97706"/>
+  <circle cx="256" cy="462" r="3" fill="#0284C7"/>
+  <circle cx="50" cy="256" r="3" fill="#D97706"/>
+
+  <!-- Central Impossible Geometric Chiral Nexus -->
+  <path d="M 256 100 L 386 325 L 326 325 L 256 204 L 186 325 L 216 325 L 256 256 Z" 
+        fill="url(#lightGold)"/>
+
+  <path d="M 386 325 L 126 325 L 156 273 L 326 273 L 256 152 L 286 152 Z" 
+        fill="url(#lightCyan)"/>
+
+  <path d="M 126 325 L 256 100 L 286 152 L 186 325 Z" 
+        fill="url(#lightObsidian)"/>
+
+  <!-- Impossible Ribbons Inner Overlap -->
+  <path d="M 256 100 L 226 152 L 256 204 L 286 152 Z" fill="#F59E0B"/>
+  <path d="M 326 273 L 386 325 L 340 348 L 296 296 Z" fill="#0369A1"/>
+  <path d="M 126 325 L 170 348 L 216 325 L 156 273 Z" fill="#E11D48"/>
+
+  <!-- Singularity -->
+  <circle cx="256" cy="245" r="14" fill="#0F172A"/>
+  <circle cx="256" cy="245" r="7" fill="#FFFFFF"/>
+  <circle cx="256" cy="245" r="3" fill="#D97706"/>
+
+  <!-- Micro Alignment Compass Points -->
+  <text x="256" y="90" fill="#B45309" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">000°</text>
+  <text x="420" y="260" fill="#475569" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">090°</text>
+  <text x="256" y="430" fill="#475569" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">180°</text>
+  <text x="92" y="260" fill="#0369A1" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">270°</text>
+</svg>
