@@ -1,34 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
-  <!-- Clean, monumental "A Chaos Standard Game" Splash Card (16:9) -->
-  <rect width="1920" height="1080" fill="#090A0F"/>
+  <!-- 16:9 "A Chaos Standard Game" Splash Card -->
+  <rect width="1920" height="1080" fill="#07090E"/>
 
   <!-- Subtle ambient radial bloom -->
-  <circle cx="960" cy="460" r="400" fill="#F5A623" opacity="0.08" filter="blur(80px)"/>
+  <circle cx="960" cy="460" r="420" fill="#6EE7FF" opacity="0.08" filter="blur(90px)"/>
 
-  <!-- Top "A" -->
-  <text x="960" y="230" fill="#00E5FF" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="22" font-weight="700" letter-spacing="16" text-anchor="middle">
-    A
-  </text>
+  <!-- Outer Faint Concentric Circles -->
+  <circle cx="960" cy="460" r="280" stroke="#6EE7FF" stroke-opacity="0.1" stroke-width="1.5" stroke-dasharray="8 12"/>
+  <circle cx="960" cy="460" r="240" stroke="#6EE7FF" stroke-opacity="0.18" stroke-width="1"/>
 
-  <!-- Centered Impossible Delta Mark -->
-  <g transform="translate(960, 470) scale(1.85)">
-    <path d="M 0 -86 L 75 43 L 45 43 L 0 -34 L 15 -60 Z" fill="#F5A623"/>
-    <path d="M 75 43 L -75 43 L -60 17 L 30 17 L 45 43 Z" fill="#00E5FF"/>
-    <path d="M -75 43 L 0 -86 L 15 -60 L -30 17 L -60 17 Z" fill="#F8FAFC"/>
+  <!-- Centered Dimensional Outline Mark -->
+  <g transform="translate(960, 460) scale(1.75)">
+    <g transform="rotate(-15)">
+      <rect x="-65" y="-65" width="130" height="130" rx="36" stroke="#6EE7FF" stroke-width="4.5" fill="#6EE7FF" fill-opacity="0.08"/>
+      <rect x="-44" y="-44" width="88" height="88" rx="25" stroke="#6EE7FF" stroke-width="2" stroke-opacity="0.6"/>
+      <line x1="-50" y1="-50" x2="-35" y2="-35" stroke="#6EE7FF" stroke-width="2" stroke-opacity="0.4"/>
+      <line x1="50" y1="-50" x2="35" y2="-35" stroke="#6EE7FF" stroke-width="2" stroke-opacity="0.4"/>
+      <line x1="-50" y1="50" x2="-35" y2="35" stroke="#6EE7FF" stroke-width="2" stroke-opacity="0.4"/>
+      <line x1="50" y1="50" x2="35" y2="35" stroke="#6EE7FF" stroke-width="2" stroke-opacity="0.4"/>
+
+      <!-- Docked pieces -->
+      <rect x="-56" y="-65" width="16" height="16" rx="4" fill="#6EE7FF"/>
+      <g transform="translate(44, 44) rotate(25)">
+        <rect x="-6" y="-18" width="12" height="38" rx="4.5" fill="#FF9F43"/>
+      </g>
+    </g>
   </g>
 
   <!-- Wordmark Main -->
-  <text x="960" y="760" fill="#F8FAFC" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="80" font-weight="800" letter-spacing="24" text-anchor="middle">
+  <text x="960" y="760" fill="#F8FAFC" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="76" font-weight="800" letter-spacing="24" text-anchor="middle">
     CHAOS STANDARD
   </text>
 
-  <!-- GAME Subtitle -->
-  <text x="960" y="830" fill="#F5A623" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="28" font-weight="700" letter-spacing="16" text-anchor="middle">
-    GAME
+  <!-- Subtitle -->
+  <text x="960" y="830" fill="#6EE7FF" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="24" font-weight="700" letter-spacing="14" text-anchor="middle">
+    A CHAOS STANDARD GAME
   </text>
 
-  <!-- Studio Motto -->
-  <text x="960" y="940" fill="#64748B" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="500" letter-spacing="4" text-anchor="middle">
-    WE TAKE MAKING RIDICULOUS THINGS EXTREMELY SERIOUSLY.
+  <!-- Tagline -->
+  <text x="960" y="930" fill="#94A3B8" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="500" letter-spacing="4" text-anchor="middle">
+    UNCONVENTIONAL BROWSER EXPERIMENTS MADE WITH AI
   </text>
 </svg>

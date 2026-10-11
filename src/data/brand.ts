@@ -3,8 +3,8 @@ import type { BrandAsset } from '../types'
 export const BRAND_ASSETS: BrandAsset[] = [
   {
     id: 'symbol-dark',
-    name: 'Primary Studio Emblem (Dark Mode)',
-    description: 'The master Chaos Standard symbol: The Impossible Delta. A bold, three-facet impossible geometric prism representing controlled chaos and non-Euclidean design. Clean, powerful, and instantly identifiable at any scale.',
+    name: 'Primary Emblem (Dark Mode)',
+    description: 'The master Chaos Standard symbol: The Dimensional Outline. A tilted wireframe squircle outline with inset translucent depth, architectural struts, a top-left cyan docked chip, and an offset amber anomaly piece. Simple, memorable, and distinctive at any scale.',
     file: '/brand/chaos-symbol-dark.svg',
     category: 'Symbol',
     format: 'SVG',
@@ -12,8 +12,8 @@ export const BRAND_ASSETS: BrandAsset[] = [
   },
   {
     id: 'symbol-light',
-    name: 'Studio Emblem (Light Mode)',
-    description: 'High-contrast inverted Impossible Delta for print, editorial layouts, light stationery, and bright background integrations.',
+    name: 'Emblem (Light Mode)',
+    description: 'High-contrast inverted Dimensional Outline for light backgrounds, documentation, and bright themes.',
     file: '/brand/chaos-symbol-light.svg',
     category: 'Symbol',
     format: 'SVG',
@@ -21,8 +21,8 @@ export const BRAND_ASSETS: BrandAsset[] = [
   },
   {
     id: 'logo-horizontal-dark',
-    name: 'Full Studio Lockup — Horizontal (Dark)',
-    description: 'The definitive studio horizontal lockup: the clean Impossible Delta paired with the architectural CHAOS STANDARD wordmark.',
+    name: 'Full Lockup — Horizontal (Dark)',
+    description: 'The definitive horizontal lockup: the Dimensional Outline symbol paired with the wide-spaced CHAOS STANDARD wordmark.',
     file: '/brand/chaos-logo-horizontal-dark.svg',
     category: 'Horizontal',
     format: 'SVG',
@@ -30,8 +30,8 @@ export const BRAND_ASSETS: BrandAsset[] = [
   },
   {
     id: 'logo-horizontal-light',
-    name: 'Full Studio Lockup — Horizontal (Light)',
-    description: 'Horizontal studio identity lockup engineered for high contrast on light backgrounds and documentation.',
+    name: 'Full Lockup — Horizontal (Light)',
+    description: 'Horizontal identity lockup engineered for high contrast on light backgrounds.',
     file: '/brand/chaos-logo-horizontal-light.svg',
     category: 'Horizontal',
     format: 'SVG',
@@ -39,8 +39,8 @@ export const BRAND_ASSETS: BrandAsset[] = [
   },
   {
     id: 'logo-stacked-dark',
-    name: 'Studio Poster Lockup — Stacked (Dark)',
-    description: 'Centered vertical presentation. Ideal for game launch posters, promotional title cards, end credits, and box art.',
+    name: 'Poster Lockup — Stacked (Dark)',
+    description: 'Centered vertical presentation. Ideal for game title screens, posters, preview cards, and social headers.',
     file: '/brand/chaos-logo-stacked-dark.svg',
     category: 'Stacked',
     format: 'SVG',
@@ -48,8 +48,8 @@ export const BRAND_ASSETS: BrandAsset[] = [
   },
   {
     id: 'logo-stacked-light',
-    name: 'Studio Poster Lockup — Stacked (Light)',
-    description: 'Clean light variant of the stacked mark for whitepaper covers, press kits, and light merchandising.',
+    name: 'Poster Lockup — Stacked (Light)',
+    description: 'Clean light variant of the stacked mark for documentation and light merchandising.',
     file: '/brand/chaos-logo-stacked-light.svg',
     category: 'Stacked',
     format: 'SVG',
@@ -58,7 +58,7 @@ export const BRAND_ASSETS: BrandAsset[] = [
   {
     id: 'mark-small',
     name: 'Micro-Scale Mark (Favicon & UI Glyphs)',
-    description: 'Simplified geometric footprint specifically tuned for 16px to 32px display without line blur.',
+    description: 'Simplified outline footprint specifically tuned for 16px to 32px display without blur.',
     file: '/brand/chaos-mark-small.svg',
     category: 'Small',
     format: 'SVG',
@@ -67,7 +67,7 @@ export const BRAND_ASSETS: BrandAsset[] = [
   {
     id: 'splash-card',
     name: '"A Chaos Standard Game" Splash Presentation',
-    description: 'Official 16:9 widescreen presentation card required for every future game boot sequence and video trailer opener.',
+    description: 'Official 16:9 widescreen presentation card for game boot sequences and video openers.',
     file: '/brand/chaos-splash-card.svg',
     category: 'Presentation',
     format: 'SVG',
@@ -76,13 +76,13 @@ export const BRAND_ASSETS: BrandAsset[] = [
 ]
 
 export const BRAND_PALETTE = [
-  { name: 'Obsidian Void', hex: '#090A0F', role: 'Primary background, cosmic depth, absolute contrast' },
+  { name: 'Obsidian Void', hex: '#07090E', role: 'Primary background, depth, absolute contrast' },
   { name: 'Carbon Surface', hex: '#11131B', role: 'Panel surface, container background, glass card core' },
-  { name: 'Standard Gold', hex: '#F5A623', role: 'Studio prestige, calibration standard, primary accent' },
-  { name: 'Spectral Cyan', hex: '#00E5FF', role: 'Browser-native tech, active telemetry, laser accuracy' },
-  { name: 'Anomaly Crimson', hex: '#FF2A5F', role: 'Fourth-wall breaches, alerts, subversive humor accents' },
+  { name: 'Electric Cyan', hex: '#00E5FF', role: 'Primary signature color, docked accent, laser precision' },
+  { name: 'Warning Coral', hex: '#FF7B54', role: 'Anomaly piece accent, fourth-wall breach marker' },
+  { name: 'Standard Amber', hex: '#FF9F43', role: 'Interactive highlights, alert states, telemetry' },
   { name: 'Arcane Violet', hex: '#8B5CF6', role: 'Hallucinated Dungeons fantasy glow and eldritch energy' },
-  { name: 'Titanium White', hex: '#F8FAFC', role: 'High-contrast typography and singularity aperture center' }
+  { name: 'Ice Slate / White', hex: '#F8FAFC', role: 'High-contrast typography and singularity aperture center' }
 ]
 
 export const BRAND_TYPOGRAPHY = [
@@ -110,7 +110,7 @@ export const BRAND_TYPOGRAPHY = [
   {
     role: 'Body & Narrative',
     name: 'Inter',
-    sample: 'We take making ridiculous things extremely seriously.',
+    sample: 'Unconventional browser games created with AI.',
     weights: 'Regular (400), Medium (500)',
     notes: 'Neutral, hyper-legible geometric workhorse ensuring effortless readability.'
   }

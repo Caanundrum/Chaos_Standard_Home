@@ -51,11 +51,11 @@ export const GAMES: GameInfo[] = [
     id: 'project-unannounced',
     title: 'Project [REDACTED]',
     subtitle: 'Next-Generation Browser Anomaly',
-    tagline: 'We are cooking more controlled chaos. Expect unconventional physics, fourth-wall fractures, and browser-first craft.',
+    tagline: 'More controlled chaos is in the works. Expect unconventional mechanics, fourth-wall fractures, and browser-first craft.',
     status: 'Classified / In Development',
     genre: 'Unannounced Browser Experience',
     platform: 'Web Standards / Browser Native',
-    description: 'Chaos Standard was founded on the conviction that the browser is the most expressive, accessible, and criminally underutilized gaming platform on earth. While our primary teams build Hallucinated Dungeons and Do Not Press Submit, our laboratory is actively incubating our next unannounced experiment.',
+    description: 'Built on the belief that the browser is the most expressive, accessible, and underutilized gaming canvas in existence. While Hallucinated Dungeons and Do Not Press Submit continue active development, the next AI-driven browser experiment is already taking shape.',
     features: [
       'Proprietary browser-native physics experiments and custom rendering architecture',
       'Uncompromising visual design with zero installation barriers',

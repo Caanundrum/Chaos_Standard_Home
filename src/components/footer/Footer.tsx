@@ -22,11 +22,11 @@ export const Footer: React.FC<FooterProps> = ({
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          {/* Col 1: Studio Brand & Motto (5 cols) */}
+          {/* Col 1: Brand & Bio (5 cols) */}
           <div className="md:col-span-5 flex flex-col items-start">
             <ChaosLogo variant="horizontal" theme="dark" interactive={true} />
             <p className="mt-4 text-sm text-[#94A3B8] max-w-sm leading-relaxed">
-              We take making ridiculous things extremely seriously. Independent creators of browser-native game experiences with high-fidelity visuals, unconventional mechanics, and questionable relationships with reality.
+              Unconventional browser games created with AI. Built for instant play, fourth-wall breaks, and software that probably has opinions about you.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -37,8 +37,8 @@ export const Footer: React.FC<FooterProps> = ({
                 }}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#F8FAFC] transition-all cursor-pointer"
               >
-                <Download className="w-3.5 h-3.5 text-[#F5A623]" />
-                <span>Brand Assets</span>
+                <Download className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <span>Brand &amp; SVGs</span>
               </button>
 
               <button
@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#F8FAFC] transition-all cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
-                <span>Replay Studio Reveal</span>
+                <span>Replay Logo Reveal</span>
               </button>
 
               <button
@@ -67,8 +67,8 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Col 2: Games (3 cols) */}
           <div className="md:col-span-3">
-            <div className="font-mono text-xs uppercase tracking-widest text-[#F5A623] font-bold mb-4">
-              Game Productions
+            <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] font-bold mb-4">
+              Games
             </div>
             <ul className="space-y-3 text-sm text-[#94A3B8]">
               <li>
@@ -108,10 +108,10 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Col 3: Studio & Engineering (4 cols) */}
+          {/* Col 3: Links (4 cols) */}
           <div className="md:col-span-4">
             <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] font-bold mb-4">
-              Repository &amp; Studio Links
+              Links &amp; Code
             </div>
             <ul className="space-y-3 text-sm text-[#94A3B8]">
               <li>

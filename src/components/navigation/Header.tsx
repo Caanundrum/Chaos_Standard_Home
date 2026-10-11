@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => sound.playClick()}
             className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#00E5FF]"
           >
-            Philosophy
+            About
           </a>
           <button
             onClick={() => {
@@ -82,8 +82,8 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5"
           >
-            <Download className="w-3.5 h-3.5 text-[#F5A623]" />
-            <span>Brand Kit &amp; Logos</span>
+            <Download className="w-3.5 h-3.5 text-[#00E5FF]" />
+            <span>Brand &amp; SVGs</span>
           </button>
           <button
             onClick={() => {
@@ -91,10 +91,10 @@ export const Header: React.FC<HeaderProps> = ({
               onReplaySplash()
             }}
             className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5"
-            title="Replay Studio Logo Reveal"
+            title="Replay Logo Reveal"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
-            <span>Studio Reveal</span>
+            <span>Logo Reveal</span>
           </button>
         </nav>
 
@@ -181,9 +181,9 @@ export const Header: React.FC<HeaderProps> = ({
               sound.playClick()
               setMobileMenuOpen(false)
             }}
-            className="text-base font-semibold text-[#F8FAFC] hover:text-[#F5A623]"
+            className="text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF]"
           >
-            Games Catalog
+            Games
           </a>
           <a
             href="#philosophy"
@@ -193,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className="text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF]"
           >
-            Studio Philosophy
+            About Chaos Standard
           </a>
           <button
             onClick={() => {
@@ -201,10 +201,10 @@ export const Header: React.FC<HeaderProps> = ({
               setMobileMenuOpen(false)
               onOpenBrandKit()
             }}
-            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#F5A623] flex items-center gap-2"
+            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF] flex items-center gap-2"
           >
-            <Download className="w-4 h-4 text-[#F5A623]" />
-            <span>Brand Identity &amp; Logos</span>
+            <Download className="w-4 h-4 text-[#00E5FF]" />
+            <span>Brand &amp; SVGs</span>
           </button>
           <button
             onClick={() => {
@@ -215,7 +215,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF] flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4 text-[#00E5FF]" />
-            <span>Replay Studio Reveal</span>
+            <span>Replay Logo Reveal</span>
           </button>
           <button
             onClick={() => {

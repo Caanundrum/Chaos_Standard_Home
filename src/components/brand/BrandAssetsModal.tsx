@@ -44,7 +44,7 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({
     const codeSnippet = `import { ChaosLogo } from '@chaos-standard/brand'
 
 // Available variants: 'symbol' | 'horizontal' | 'stacked' | 'small' | 'splash'
-export const StudioSplash = () => (
+export const ChaosSplash = () => (
   <ChaosLogo variant="splash" theme="dark" interactive={true} />
 )`
     navigator.clipboard.writeText(codeSnippet)
@@ -340,7 +340,7 @@ export const StudioSplash = () => (
 {`// Example React Splash Screen Implementation:
 import React, { useEffect } from 'react';
 
-export const GameStudioSplash = ({ onFinish }: { onFinish: () => void }) => {
+export const ChaosSplash = ({ onFinish }: { onFinish: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(onFinish, 3000);
     return () => clearTimeout(timer);
@@ -364,7 +364,7 @@ export const GameStudioSplash = ({ onFinish }: { onFinish: () => void }) => {
 
         {/* Footer */}
         <div className="px-6 py-4 bg-[#11131B] border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#64748B]">
-          <span>© 2025 CHAOS STANDARD INTERACTIVE</span>
+          <span>© 2025 CHAOS STANDARD</span>
           <button
             onClick={() => {
               sound.playClick()

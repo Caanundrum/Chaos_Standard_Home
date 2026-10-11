@@ -33,7 +33,7 @@ export const ChaosTerminal: React.FC<ChaosTerminalProps> = ({
     },
     {
       id: 'init-2',
-      response: 'Type "help" for a list of available studio commands.',
+      response: 'Type "help" for a list of available commands.',
       type: 'info'
     }
   ])
@@ -75,20 +75,21 @@ export const ChaosTerminal: React.FC<ChaosTerminalProps> = ({
       case 'help':
         response = `Available Commands:
   • help       - Show this command reference
-  • status     - Query studio reality coherence & telemetry
+  • status     - Query reality coherence & telemetry
   • games      - List active and incubating game titles
   • dungeon    - Ask the AI Dungeon Master for spontaneous advice
   • submit     - Inquire about the "Do Not Press Submit" protocol
   • chaos <N>  - Set site Chaos Calibrator level (0 to 100)
   • flip       - Temporarily tilt your perspective
-  • matrix     - Decode raw studio telemetry stream
+  • matrix     - Decode raw telemetry stream
   • clear      - Clear terminal screen
   • exit       - Close this developer console`
         break
 
       case 'status':
-        response = `STUDIO TELEMETRY:
-  - Runtime: Browser-Native (Web Standards)
+        response = `SYSTEM TELEMETRY:
+  - Platform: Browser-Native (Web Standards)
+  - Engine: Generative AI
   - Reality Coherence: 94.2% (Degrading gracefully)
   - Fourth-Wall Integrity: 12% (Structural cracks detected)
   - Current Chaos Calibrator: ${chaosLevel}%
@@ -98,7 +99,7 @@ export const ChaosTerminal: React.FC<ChaosTerminalProps> = ({
 
       case 'games':
         response = `CATALOG INDEX:
-  1. Hallucinated Dungeons   [AI Multiplayer Tabletop RPG] -> Active Dev
+  1. Hallucinated Dungeons   [AI Multiplayer Tabletop RPG] -> Alpha 3 Live
   2. Do Not Press Submit     [Antagonistic UI Comedy]      -> Dev Preview Live
   3. Project [REDACTED]      [Browser-Native Anomaly]       -> Classified`
         type = 'success'
@@ -114,7 +115,7 @@ export const ChaosTerminal: React.FC<ChaosTerminalProps> = ({
       case 'submit':
         sound.playBuzzer()
         response = `ANTAGONISTIC UI ALERT:
-We specifically instructed you not to press submit. Asking about it in the CLI counts as intent to violate protocol. Your mouse coordinates have been noted.`
+The protocol specifically said not to press submit. Asking about it in the CLI counts as intent to violate protocol. Your mouse coordinates have been noted.`
         type = 'warn'
         break
 
@@ -139,7 +140,7 @@ We specifically instructed you not to press submit. Asking about it in the CLI c
         sound.playGlitch()
         response = `01000011 01001000 01000001 01001111 01010011 // STANDARD_VERIFIED
 01010011 01010100 01000001 01001110 01000100 01000001 01010010 01000100
-WE TAKE MAKING RIDICULOUS THINGS EXTREMELY SERIOUSLY.`
+UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
         type = 'success'
         break
 

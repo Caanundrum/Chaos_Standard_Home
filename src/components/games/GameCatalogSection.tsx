@@ -133,12 +133,12 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-white/10">
         <div>
-          <div className="font-mono text-xs text-[#F5A623] uppercase tracking-[0.25em] mb-2 font-bold flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#F5A623]" />
-            THE CHAOS STANDARD CATALOG
+          <div className="font-mono text-xs text-[#00E5FF] uppercase tracking-[0.25em] mb-2 font-bold flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+            GAMES CATALOG
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#F8FAFC]">
-            BROWSER-NATIVE PRODUCTIONS
+            BROWSER-NATIVE GAMES
           </h2>
         </div>
         <p className="text-sm text-[#94A3B8] max-w-md mt-4 md:mt-0 font-normal">
@@ -441,16 +441,15 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _
               </div>
 
               <p className="text-[#94A3B8] text-base leading-relaxed mb-6 font-normal">
-                Chaos Standard was created to prove that the browser is the most potent, immediate, and criminally underutilized gaming platform on earth. While our teams advance Hallucinated Dungeons and Do Not Press Submit, our laboratory is incubating another unconventional title with unexpected mechanics and subversive design.
+                Chaos Standard is built on the conviction that the browser is the most expressive, immediate, and underutilized gaming platform on earth. While Hallucinated Dungeons and Do Not Press Submit continue active development, the next unconventional title is incubating with unexpected mechanics and subversive design.
               </p>
 
               {/* Philosophical Guarantees */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 <div className="flex items-start gap-2 text-xs text-[#CBD5E1]">
                   <CheckCircle2 className="w-4 h-4 text-[#FF2A5F] flex-shrink-0 mt-0.5" />
-                  <span>Zero installation barrier: immediate multiplayer causation</span>
+                  <span>Zero installation barrier: immediate browser play</span>
                 </div>
-                <div className="flex items-start gap-2 text-xs text-[#FF2A5F] flex-shrink-0 mt-0.5" />
                 <div className="flex items-start gap-2 text-xs text-[#CBD5E1]">
                   <CheckCircle2 className="w-4 h-4 text-[#FF2A5F] flex-shrink-0 mt-0.5" />
                   <span>Uncompromising visual fidelity and original art direction</span>
