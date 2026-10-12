@@ -57,8 +57,8 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
 
     // Strictly Hazard Orange, Warm Amber, and Slate Grey palette
     const colors = ['#FF6A00', '#FF8533', '#FFA040', '#94A3B8', '#64748B']
-    // Minimalist, non-distracting particle count: between 12 and 20 across the entire screen
-    const particleCount = Math.min(Math.max(12, Math.floor((width * height) / 100000)), 20)
+    // Balanced count: 22 to 32 particles—sparse and uncluttered, but frequent enough for links
+    const particleCount = Math.min(Math.max(20, Math.floor((width * height) / 65000)), 32)
     const particles: Particle[] = []
 
     for (let i = 0; i < particleCount; i++) {
@@ -69,8 +69,8 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
         y: Math.random() * height,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
-        size: Math.random() * 1.6 + 1.0,
-        baseAlpha: Math.random() * 0.2 + 0.12,
+        size: Math.random() * 1.8 + 1.2,
+        baseAlpha: Math.random() * 0.25 + 0.2,
         color: colors[Math.floor(Math.random() * colors.length)],
         type: Math.random() > 0.8 ? 'cross' : Math.random() > 0.65 ? 'ring' : 'dot'
       })
@@ -85,7 +85,8 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
       // Continuous dynamic scale: from 0.35x at 0% to 3.2x speed at 100%
       const currentChaos = chaosRef.current
       const speedMultiplier = 0.35 + (currentChaos / 100) * 2.8
-      const connectionDist = 55 + (currentChaos / 100) * 35
+      // Generous connection radius so nearby particles actively form constellation lines
+      const connectionDist = 140 + (currentChaos / 100) * 60
 
       // Faint metric grid lines
       ctx.strokeStyle = `rgba(255, 106, 0, ${0.01 + (currentChaos / 100) * 0.03})`
@@ -184,9 +185,9 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p2.x, p2.y)
             ctx.strokeStyle = p.color
-            const alpha = (1 - dist / connectionDist) * 0.08 * (0.6 + (currentChaos / 100) * 0.6)
-            ctx.globalAlpha = alpha
-            ctx.lineWidth = 0.5
+            const alpha = (1 - dist / connectionDist) * 0.28 * (0.8 + (currentChaos / 100) * 0.5)
+            ctx.globalAlpha = Math.min(0.4, Math.max(0.02, alpha))
+            ctx.lineWidth = currentChaos > 60 ? 1.0 : 0.75
             ctx.stroke()
             ctx.restore()
           }
