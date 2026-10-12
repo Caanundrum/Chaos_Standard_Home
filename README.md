@@ -1,6 +1,10 @@
 # Chaos Standard // Official Studio Website
 
-[![Chaos Standard Studio](public/brand/chaos-logo-horizontal-dark.svg)](https://chaosstandard.com)
+<p align="center">
+  <a href="https://chaosstandard.com">
+    <img src="public/brand/chaos-logo-master.png" alt="Chaos Standard Studio" width="460" />
+  </a>
+</p>
 
 > **"We take making ridiculous things extremely seriously."**  
 > Official Website: [https://chaosstandard.com](https://chaosstandard.com)  
@@ -44,35 +48,45 @@ Our laboratory is actively incubating unannounced browser titles exploring uncon
 
 ---
 
-## 3. The Studio Logo Family
+## 3. The Studio Identity & Master Logo Suite
 
-The Chaos Standard brand identity centers on the **"Impossible Delta"**: a mathematically pure, non-Euclidean three-facet Penrose prism representing the collision of metric precision (*"Standard"*) with impossible reality-bending paradox (*"Chaos"*). It is bold, simple, and identifiable at a glance.
+The official Chaos Standard brand identity centers on the **"Bewildered Terminal" (Chaos Monitor)**: a symmetrical retro-futuristic CRT computer monitor that has witnessed too much procedural reality distortion.
 
-Reusable vector assets are provided in [`public/brand/`](public/brand/):
+Perched over the fractured, electric-charged **CHAOS** wordmark and the precision brushed sci-fi **STANDARD** block lettering, the monitor features:
+- **Clean Symmetrical Silhouette:** Pure frontal CRT chassis with clean stand (zero rear 3D protrusion, zero clutter).
+- **Zero-White Phosphor Screen:** Slate grey CRT display (`#1E222A`) with expressive, bewildered line art, raised eyebrow, and crooked smirk.
+- **Strict Color Architecture:** High-contrast palette locked to **Hazard Orange (`#FF6A00`)**, **CRT Slate Phosphor (`#1E222A`)**, **Standard Slate (`#94A3B8`)**, and deep obsidian **Pitch Black (`#05070A`)**.
 
-1. **`chaos-symbol-dark.svg`** — Primary Studio Emblem (Dark Mode)
-2. **`chaos-symbol-light.svg`** — Inverted Studio Emblem (Light Mode)
-3. **`chaos-logo-horizontal-dark.svg`** — Full Horizontal Studio Lockup (Dark)
-4. **`chaos-logo-horizontal-light.svg`** — Full Horizontal Studio Lockup (Light)
-5. **`chaos-logo-stacked-dark.svg`** — Vertical Poster / Box Art Lockup (Dark)
-6. **`chaos-logo-stacked-light.svg`** — Vertical Poster / Box Art Lockup (Light)
-7. **`chaos-mark-small.svg`** — Simplified 32px / 16px Micro Glyph (Favicon)
-8. **`chaos-splash-card.svg`** — Official 16:9 **"A Chaos Standard Game"** Presentation Splash
+### Master Reusable Asset Suite (`public/brand/`)
 
-For complete typography, color tokens, and design rules, see [BRAND_GUIDE.md](BRAND_GUIDE.md).
+| Asset | File | Format / Ratio | Description & Use Case |
+| :--- | :--- | :--- | :--- |
+| **Master Lockup (Hi-Res)** | [`chaos-logo-master.png`](public/brand/chaos-logo-master.png) | PNG / 1:1 (1024×1024) | Primary studio lockup on pitch-black canvas for store headers, press releases, and media. |
+| **Master Lockup (Alpha Transparent)** | [`chaos-logo-transparent.png`](public/brand/chaos-logo-transparent.png) | PNG / 1:1 (1024×1024) | Transparent cutout for game titles, stream overlays, light/dark hero headers, and box art. |
+| **Master Lockup (JPG)** | [`chaos-logo-master.jpg`](public/brand/chaos-logo-master.jpg) | JPG / 1:1 (1024×1024) | Solid black background format for Discord, social avatars, and web headers. |
+| **Bewildered Terminal Mark** | [`chaos-mark-symbol.png`](public/brand/chaos-mark-symbol.png) | PNG / 1:1 (512×512) | Standalone mascot symbol: monitor chassis, orange bevel, and expressive slate face. |
+| **Terminal Mark (JPG)** | [`chaos-mark-symbol.jpg`](public/brand/chaos-mark-symbol.jpg) | JPG / 1:1 (512×512) | Standalone symbol on solid black for app icons and square profiles. |
+| **Wordmark Lockup** | [`chaos-wordmark.png`](public/brand/chaos-wordmark.png) | PNG / 5:2 | Isolated typographic lockup: fractured orange CHAOS + sci-fi brushed STANDARD. |
+| **Cinematic Splash Card** | [`chaos-splash-card.png`](public/brand/chaos-splash-card.png) | PNG / 16:9 (1920×1080) | 1080p widescreen presentation card for boot sequences, video title cards, and game intros. |
+| **Splash Card (JPG)** | [`chaos-splash-card.jpg`](public/brand/chaos-splash-card.jpg) | JPG / 16:9 (1920×1080) | Open-Graph social preview card and high-speed web cover. |
+| **Micro Glyph / Favicon** | [`favicon.png`](public/favicon.png) | PNG / 1:1 | Pixel-tuned micro symbol optimized for 16px to 64px browser tabs and home screen bookmarks. |
+
+For complete design guidelines, token values, and rules, see [BRAND_GUIDE.md](BRAND_GUIDE.md).
 
 ---
 
 ## 4. Key Interactive Features
 
-- **Cinematic Studio Splash Reveal:** High-impact studio reveal sequence on entry with procedural audio and skip options.
-- **The Chaos Calibrator:** Real-time HUD slider (0% to 100%) that dynamically adjusts site physics and microcopy.
+- **Continuous CRT Logo Reveal:** High-impact electron-beam expansion & CRT monitor unzipping sequence (`StudioSplashReveal.tsx`) with procedural synthesized audio and instant skip option.
+- **The Chaos Calibrator:** Real-time HUD entropy slider (0% to 100%) that alters site physics, background turbulence, particle velocity (up to 10x dynamic range), and terminal telemetry.
+- **Dynamic Constellation Particles:** Restrained, non-distracting HTML5 canvas particle engine with dynamic amber/orange/slate constellation lines that link nearby floating particles.
+- **The "Do Not Click" Challenge:** Antagonistic 5-stage interactive challenge in the hero banner that dares players and leads directly to *Do Not Press Submit*.
 - **Tabletop DM Oracle Simulator:** Embedded in the *Hallucinated Dungeons* showcase; roll the d20 for real-time generative DM narration.
 - **Antagonistic UI Test Field:** Embedded in the *Do Not Press Submit* showcase; an evasive button that taunts your cursor and rewards defiance with confetti.
 - **Decryption Telemetry Tuner:** Embedded in the *Project [REDACTED]* showcase; frequency slider that reveals classified development clues.
 - **Interactive Developer CLI (`~`):** Slide-out command console supporting `status`, `games`, `dungeon`, `submit`, `chaos`, and easter eggs.
-- **Procedural Web Audio Engine:** Pure zero-dependency synthesizer powering haptic clicks, chimes, and rumble without external MP3 files.
-- **Brand Assets & Media Kit Modal:** Integrated vector download center, color token copier, and live splash simulator.
+- **Procedural Web Audio Engine:** Pure zero-dependency synthesizer powering haptic clicks, chimes, and rumble without external audio files.
+- **Brand Assets & Media Kit Modal:** Integrated download center for hi-res PNGs, transparent cutouts, color token copier, and live splash simulator.
 
 ---
 
@@ -140,5 +154,5 @@ firebase deploy --only hosting
 
 ## 8. License & Copyright
 
-© 2025 Chaos Standard. All rights reserved.  
+© 2026 Chaos Standard. All rights reserved.  
 *"We take making ridiculous things extremely seriously."*
