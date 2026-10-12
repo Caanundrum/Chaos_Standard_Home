@@ -57,21 +57,22 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
 
     // Strictly Hazard Orange, Warm Amber, and Slate Grey palette
     const colors = ['#FF6A00', '#FF8533', '#FFA040', '#94A3B8', '#64748B']
-    const particleCount = Math.min(Math.floor((width * height) / 18000), 85)
+    // Minimalist, non-distracting particle count: between 12 and 20 across the entire screen
+    const particleCount = Math.min(Math.max(12, Math.floor((width * height) / 100000)), 20)
     const particles: Particle[] = []
 
     for (let i = 0; i < particleCount; i++) {
       const angle = Math.random() * Math.PI * 2
-      const speed = Math.random() * 0.8 + 0.4
+      const speed = Math.random() * 0.6 + 0.3
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
-        size: Math.random() * 2.4 + 1.2,
-        baseAlpha: Math.random() * 0.35 + 0.25,
+        size: Math.random() * 1.6 + 1.0,
+        baseAlpha: Math.random() * 0.2 + 0.12,
         color: colors[Math.floor(Math.random() * colors.length)],
-        type: Math.random() > 0.75 ? 'cross' : Math.random() > 0.6 ? 'ring' : 'dot'
+        type: Math.random() > 0.8 ? 'cross' : Math.random() > 0.65 ? 'ring' : 'dot'
       })
     }
 
@@ -81,10 +82,10 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
       time += 0.015
       ctx.clearRect(0, 0, width, height)
 
-      // Continuous dynamic scale: from 0.4x at 0% to 4.5x speed at 100%!
+      // Continuous dynamic scale: from 0.35x at 0% to 3.2x speed at 100%
       const currentChaos = chaosRef.current
-      const speedMultiplier = 0.35 + (currentChaos / 100) * 3.8
-      const connectionDist = 70 + (currentChaos / 100) * 75 // Connection range expands with chaos
+      const speedMultiplier = 0.35 + (currentChaos / 100) * 2.8
+      const connectionDist = 55 + (currentChaos / 100) * 35
 
       // Faint metric grid lines
       ctx.strokeStyle = `rgba(255, 106, 0, ${0.01 + (currentChaos / 100) * 0.03})`
@@ -183,9 +184,9 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p2.x, p2.y)
             ctx.strokeStyle = p.color
-            const alpha = (1 - dist / connectionDist) * 0.18 * (0.6 + (currentChaos / 100) * 1.4)
+            const alpha = (1 - dist / connectionDist) * 0.08 * (0.6 + (currentChaos / 100) * 0.6)
             ctx.globalAlpha = alpha
-            ctx.lineWidth = currentChaos > 70 ? 1.2 : 0.75
+            ctx.lineWidth = 0.5
             ctx.stroke()
             ctx.restore()
           }
