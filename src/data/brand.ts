@@ -89,8 +89,7 @@ export const BRAND_PALETTE = [
   { name: 'Hazard Orange', hex: '#FF6A00', role: 'Primary chaos signature, monitor bezel, lightning fractures' },
   { name: 'CRT Slate Phosphor', hex: '#1E222A', role: 'Terminal CRT background screen, subtle grid scanlines' },
   { name: 'Standard Slate', hex: '#94A3B8', role: 'Uniform sci-fi block lettering, precision telemetry, secondary text' },
-  { name: 'Carbon Surface', hex: '#11131B', role: 'Panel surface, container background, glass card core' },
-  { name: 'Pure White / Glare', hex: '#F8FAFC', role: 'Eye pupils, specular screen reflection, high-contrast highlights' }
+  { name: 'Carbon Surface', hex: '#11131B', role: 'Panel surface, container background, glass card core' }
 ]
 
 export const BRAND_TYPOGRAPHY = [
