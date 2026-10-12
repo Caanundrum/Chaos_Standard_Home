@@ -16,9 +16,9 @@ export const Footer: React.FC<FooterProps> = ({
   onReplaySplash
 }) => {
   return (
-    <footer className="relative bg-[#06070B] border-t border-white/10 pt-20 pb-14 px-4 sm:px-6 overflow-hidden">
+    <footer className="relative bg-[#05070A] border-t border-white/10 pt-20 pb-14 px-4 sm:px-6 overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#F5A623]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FF6A00]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
@@ -37,8 +37,8 @@ export const Footer: React.FC<FooterProps> = ({
                 }}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#F8FAFC] transition-all cursor-pointer"
               >
-                <Download className="w-3.5 h-3.5 text-[#00E5FF]" />
-                <span>Brand &amp; SVGs</span>
+                <Download className="w-3.5 h-3.5 text-[#FF6A00]" />
+                <span>Brand &amp; Assets</span>
               </button>
 
               <button
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({
                 }}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#F8FAFC] transition-all cursor-pointer"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#FF6A00]" />
                 <span>Replay Logo Reveal</span>
               </button>
 
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({
                   sound.playClick()
                   onOpenTerminal()
                 }}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#00E5FF] transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#FF6A00] transition-all cursor-pointer"
               >
                 <Terminal className="w-3.5 h-3.5" />
                 <span>~ CLI</span>
@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Col 2: Games (3 cols) */}
           <div className="md:col-span-3">
-            <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] font-bold mb-4">
+            <div className="font-mono text-xs uppercase tracking-widest text-[#FF6A00] font-bold mb-4">
               Games
             </div>
             <ul className="space-y-3 text-sm text-[#94A3B8]">
@@ -77,10 +77,10 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => sound.playClick()}
-                  className="hover:text-[#8B5CF6] transition-colors flex items-center justify-between group"
+                  className="hover:text-[#FF6A00] transition-colors flex items-center justify-between group"
                 >
                   <span className="group-hover:underline">Hallucinated Dungeons (Alpha 3)</span>
-                  <ExternalLink className="w-3 h-3 text-[#8B5CF6]" />
+                  <ExternalLink className="w-3 h-3 text-[#FF6A00]" />
                 </a>
               </li>
               <li>
@@ -89,10 +89,10 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => sound.playClick()}
-                  className="hover:text-[#00E5FF] transition-colors flex items-center justify-between group"
+                  className="hover:text-[#FF6A00] transition-colors flex items-center justify-between group"
                 >
                   <span className="group-hover:underline">Do Not Press Submit</span>
-                  <ExternalLink className="w-3 h-3 text-[#00E5FF]" />
+                  <ExternalLink className="w-3 h-3 text-[#FF6A00]" />
                 </a>
               </li>
               <li>
@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-[#F8FAFC] transition-colors flex items-center justify-between"
                 >
                   <span>Project [REDACTED]</span>
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-[#FF2A5F]">Classified</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-[#FF6A00]">Classified</span>
                 </a>
               </li>
             </ul>
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Col 3: Links (4 cols) */}
           <div className="md:col-span-4">
-            <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] font-bold mb-4">
+            <div className="font-mono text-xs uppercase tracking-widest text-[#FF6A00] font-bold mb-4">
               Links &amp; Code
             </div>
             <ul className="space-y-3 text-sm text-[#94A3B8]">
@@ -134,12 +134,12 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => sound.playClick()}
                   className="hover:text-[#F8FAFC] transition-colors flex items-center gap-2"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+                  <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
                   <span>Official Domain: chaosstandard.com</span>
                 </a>
               </li>
               <li className="pt-2 text-xs font-mono text-[#64748B] flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#F5A623]" />
+                <ShieldCheck className="w-4 h-4 text-[#FF6A00]" />
                 <span>Static Hosting Target: Firebase Hosting</span>
               </li>
             </ul>

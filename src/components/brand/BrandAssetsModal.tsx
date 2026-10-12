@@ -74,8 +74,8 @@ export const ChaosSplash = () => (
               <h2 className="font-display text-xl font-bold text-[#F8FAFC]">
                 Chaos Standard Brand Identity &amp; Assets
               </h2>
-              <div className="font-mono text-xs text-[#F5A623]">
-                VERSION 1.0.0 // VECTOR LOGO SUITE &amp; SYSTEM
+              <div className="font-mono text-xs text-[#FF6A00]">
+                VERSION 2.0.0 // REUSABLE PNG / JPG MASTER SUITE
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ export const ChaosSplash = () => (
                 sound.playClick()
                 onPlaySplash()
               }}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F5A623]/15 border border-[#F5A623]/30 hover:bg-[#F5A623] hover:text-[#090A0F] text-[#F5A623] text-xs font-mono font-semibold transition-all cursor-pointer"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF6A00]/15 border border-[#FF6A00]/30 hover:bg-[#FF6A00] hover:text-[#05070A] text-[#FF6A00] text-xs font-mono font-semibold transition-all cursor-pointer"
             >
               <Play className="w-3.5 h-3.5" />
               <span>Simulate Splash Screen</span>
@@ -114,12 +114,12 @@ export const ChaosSplash = () => (
             }}
             className={`flex items-center gap-2 py-3 px-4 text-xs font-mono font-semibold border-b-2 transition-all cursor-pointer ${
               activeTab === 'logos'
-                ? 'border-[#F5A623] text-[#F5A623]'
+                ? 'border-[#FF6A00] text-[#FF6A00]'
                 : 'border-transparent text-[#94A3B8] hover:text-[#F8FAFC]'
             }`}
           >
             <Layers className="w-4 h-4" />
-            <span>Logo Family ({BRAND_ASSETS.length})</span>
+            <span>Master Suite ({BRAND_ASSETS.length})</span>
           </button>
 
           <button
@@ -129,12 +129,12 @@ export const ChaosSplash = () => (
             }}
             className={`flex items-center gap-2 py-3 px-4 text-xs font-mono font-semibold border-b-2 transition-all cursor-pointer ${
               activeTab === 'colors'
-                ? 'border-[#00E5FF] text-[#00E5FF]'
+                ? 'border-[#FF6A00] text-[#FF6A00]'
                 : 'border-transparent text-[#94A3B8] hover:text-[#F8FAFC]'
             }`}
           >
             <Palette className="w-4 h-4" />
-            <span>Color Palette</span>
+            <span>Hazard Orange &amp; Slate Palette</span>
           </button>
 
           <button
@@ -144,7 +144,7 @@ export const ChaosSplash = () => (
             }}
             className={`flex items-center gap-2 py-3 px-4 text-xs font-mono font-semibold border-b-2 transition-all cursor-pointer ${
               activeTab === 'typography'
-                ? 'border-[#8B5CF6] text-[#8B5CF6]'
+                ? 'border-[#94A3B8] text-[#94A3B8]'
                 : 'border-transparent text-[#94A3B8] hover:text-[#F8FAFC]'
             }`}
           >
@@ -159,7 +159,7 @@ export const ChaosSplash = () => (
             }}
             className={`flex items-center gap-2 py-3 px-4 text-xs font-mono font-semibold border-b-2 transition-all cursor-pointer ${
               activeTab === 'code'
-                ? 'border-[#FF2A5F] text-[#FF2A5F]'
+                ? 'border-[#FF6A00] text-[#FF6A00]'
                 : 'border-transparent text-[#94A3B8] hover:text-[#F8FAFC]'
             }`}
           >
@@ -175,7 +175,7 @@ export const ChaosSplash = () => (
             <div>
               {/* Category Filter Pills */}
               <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-2">
-                {['All', 'Symbol', 'Horizontal', 'Stacked', 'Small', 'Presentation'].map(cat => (
+                {['All', 'Master', 'Symbol', 'Wordmark', 'Presentation', 'Small'].map(cat => (
                   <button
                     key={cat}
                     onClick={() => {
@@ -184,7 +184,7 @@ export const ChaosSplash = () => (
                     }}
                     className={`px-3 py-1 rounded-lg text-xs font-mono font-semibold transition-all cursor-pointer ${
                       selectedCategory === cat
-                        ? 'bg-[#F5A623] text-[#090A0F]'
+                        ? 'bg-[#FF6A00] text-[#05070A]'
                         : 'bg-white/5 text-[#94A3B8] hover:bg-white/10'
                     }`}
                   >
@@ -205,7 +205,7 @@ export const ChaosSplash = () => (
                       {/* Asset Preview Frame */}
                       <div
                         className={`h-48 rounded-xl flex items-center justify-center p-4 mb-4 border border-white/10 overflow-hidden ${
-                          isLightFile ? 'bg-[#F8FAFC]' : 'bg-[#06070A]'
+                          isLightFile ? 'bg-[#F8FAFC]' : 'bg-[#05070A]'
                         }`}
                       >
                         <img
@@ -218,7 +218,7 @@ export const ChaosSplash = () => (
                       {/* Asset Metadata */}
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <span className="font-mono text-[10px] text-[#00E5FF] uppercase font-bold">
+                          <span className="font-mono text-[10px] text-[#FF6A00] uppercase font-bold">
                             {asset.category} // {asset.format}
                           </span>
                           <span className="font-mono text-[10px] text-[#64748B]">
@@ -238,10 +238,10 @@ export const ChaosSplash = () => (
                         href={asset.file}
                         download
                         onClick={() => sound.playClick()}
-                        className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white/10 hover:bg-[#F5A623] hover:text-[#090A0F] text-[#F8FAFC] text-xs font-mono font-bold transition-all cursor-pointer"
+                        className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white/10 hover:bg-[#FF6A00] hover:text-[#05070A] text-[#F8FAFC] text-xs font-mono font-bold transition-all cursor-pointer"
                       >
                         <Download className="w-3.5 h-3.5" />
-                        <span>Download Vector SVG</span>
+                        <span>Download Asset ({asset.format})</span>
                       </a>
                     </div>
                   )
@@ -269,7 +269,7 @@ export const ChaosSplash = () => (
                     >
                       {copiedHex === c.hex && (
                         <span className="px-2 py-1 rounded bg-black/80 text-white font-mono text-xs flex items-center gap-1 font-bold">
-                          <Check className="w-3 h-3 text-[#00E5FF]" /> Copied!
+                          <Check className="w-3 h-3 text-[#FF6A00]" /> Copied!
                         </span>
                       )}
                     </div>
@@ -277,7 +277,7 @@ export const ChaosSplash = () => (
                       <div className="font-display font-bold text-[#F8FAFC] text-sm">
                         {c.name}
                       </div>
-                      <div className="font-mono text-xs text-[#F5A623] font-bold mt-0.5">
+                      <div className="font-mono text-xs text-[#FF6A00] font-bold mt-0.5">
                         {c.hex}
                       </div>
                       <div className="text-[11px] text-[#64748B] mt-1">
@@ -296,7 +296,7 @@ export const ChaosSplash = () => (
               {BRAND_TYPOGRAPHY.map(t => (
                 <div key={t.role} className="p-6 rounded-2xl bg-[#12141C] border border-white/10">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-mono text-xs text-[#00E5FF] uppercase font-bold">
+                    <span className="font-mono text-xs text-[#FF6A00] uppercase font-bold">
                       {t.role}
                     </span>
                     <span className="font-mono text-xs text-[#64748B]">
@@ -306,7 +306,7 @@ export const ChaosSplash = () => (
                   <div className="font-display text-2xl font-extrabold text-[#F8FAFC] mb-2">
                     {t.name}
                   </div>
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/5 font-mono text-sm text-[#F5A623] mb-3">
+                  <div className="p-4 rounded-xl bg-black/50 border border-white/5 font-mono text-sm text-[#FF6A00] mb-3">
                     {t.sample}
                   </div>
                   <div className="text-xs text-[#94A3B8]">
@@ -327,14 +327,14 @@ export const ChaosSplash = () => (
                   </div>
                   <button
                     onClick={handleCopyCode}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#00E5FF] hover:text-[#090A0F] text-xs font-mono text-[#F8FAFC] font-semibold transition-all cursor-pointer"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#FF6A00] hover:text-[#05070A] text-xs font-mono text-[#F8FAFC] font-semibold transition-all cursor-pointer"
                   >
                     {copiedCode ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedCode ? 'COPIED!' : 'COPY CODE'}</span>
                   </button>
                 </div>
                 <p className="text-xs text-[#94A3B8] leading-relaxed mb-4">
-                  Every future game built under the Chaos Standard banner (including Hallucinated Dungeons, Do Not Press Submit, and upcoming titles) should include the standardized splash screen sequence or use <code className="bg-black/60 px-1.5 py-0.5 rounded text-[#00E5FF]">/brand/chaos-splash-card.svg</code> as its opening cinematic card.
+                  Every future game built under the Chaos Standard banner (including Hallucinated Dungeons, Do Not Press Submit, and upcoming titles) can use the reusable high-res splash card <code className="bg-black/60 px-1.5 py-0.5 rounded text-[#FF6A00]">/brand/chaos-splash-card.png</code> or master lockup <code className="bg-black/60 px-1.5 py-0.5 rounded text-[#FF6A00]">/brand/chaos-logo-master.png</code>.
                 </p>
                 <pre className="p-4 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-[#E2E8F0] overflow-x-auto">
 {`// Example React Splash Screen Implementation:
@@ -347,11 +347,11 @@ export const ChaosSplash = ({ onFinish }: { onFinish: () => void }) => {
   }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 bg-[#090A0F] flex items-center justify-center">
+    <div className="fixed inset-0 bg-[#05070A] flex items-center justify-center">
       <img 
-        src="/brand/chaos-splash-card.svg" 
-        alt="A Chaos Standard Game" 
-        className="max-w-2xl w-full animate-fade-in"
+        src="/brand/chaos-splash-card.png" 
+        alt="Chaos Standard" 
+        className="max-w-3xl w-full animate-fade-in"
       />
     </div>
   );

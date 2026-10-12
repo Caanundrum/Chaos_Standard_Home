@@ -29,29 +29,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section id="hero" className="relative min-h-[92vh] pt-28 pb-20 flex flex-col justify-center items-center px-4 sm:px-6 overflow-hidden">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#F5A623]/10 via-[#00E5FF]/10 to-[#8B5CF6]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#FF6A00]/15 via-[#FF8C33]/10 to-transparent rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Calibration Tag */}
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#11131B]/90 border border-white/10 text-xs font-mono text-[#94A3B8] mb-8 shadow-lg backdrop-blur-md">
-        <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-ping" />
-        <span className="text-[#00E5FF] font-semibold">BROWSER GAMES MADE WITH AI</span>
+        <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping" />
+        <span className="text-[#FF6A00] font-semibold">BROWSER GAMES MADE WITH AI</span>
         <span className="text-white/20">//</span>
         <span>ZERO INSTALL</span>
       </div>
 
       {/* Main Emblem Showcase with Interactive Hover */}
       <div className="relative mb-8 group cursor-pointer" onClick={handlePokeAnomaly}>
-        <div className="w-32 h-32 sm:w-40 sm:h-40 relative z-10 transition-transform duration-500 group-hover:scale-105">
+        <div className="w-40 h-40 sm:w-48 sm:h-48 relative z-10 transition-transform duration-500 group-hover:scale-105">
           <ChaosLogo variant="symbol" theme="dark" interactive={false} />
         </div>
-        <div className="absolute inset-0 bg-[#00E5FF]/15 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+        <div className="absolute inset-0 bg-[#FF6A00]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
       </div>
 
       {/* Monumental Headline */}
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#F8FAFC] leading-[1.08] mb-6">
           UNCONVENTIONAL{' '}
-          <span className="bg-gradient-to-r from-[#00E5FF] via-[#7DD3FC] to-[#00E5FF] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#FF8C33] via-[#FFAE66] to-[#FF6A00] bg-clip-text text-transparent">
             BROWSER GAMES
           </span>{' '}
           MADE WITH AI.
@@ -68,17 +68,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               sound.playClick()
               onExploreGames()
             }}
-            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#F5A623] to-[#D97706] text-[#090A0F] font-bold text-base hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#F5A623]/25 cursor-pointer"
+            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#FF6A00] to-[#E65500] text-[#05070A] font-bold text-base hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#FF6A00]/25 cursor-pointer"
           >
-            <Compass className="w-5 h-5 text-[#090A0F]" />
+            <Compass className="w-5 h-5 text-[#05070A]" />
             <span>Explore Games</span>
           </button>
 
           <button
             onClick={handlePokeAnomaly}
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131B] border border-white/15 hover:border-[#00E5FF]/60 text-[#F8FAFC] font-semibold text-base hover:text-[#00E5FF] transition-all cursor-pointer"
+            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131B] border border-white/15 hover:border-[#FF6A00]/60 text-[#F8FAFC] font-semibold text-base hover:text-[#FF6A00] transition-all cursor-pointer"
           >
-            <Sparkles className="w-5 h-5 text-[#00E5FF]" />
+            <Sparkles className="w-5 h-5 text-[#FF6A00]" />
             <span>Pester Anomaly {anomaliesPoked > 0 && `(${anomaliesPoked})`}</span>
           </button>
 
@@ -87,10 +87,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               sound.playClick()
               onOpenBrandKit()
             }}
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131B] border border-white/10 hover:border-[#00E5FF]/40 text-[#94A3B8] hover:text-[#F8FAFC] font-medium text-sm transition-all cursor-pointer"
+            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131B] border border-white/10 hover:border-[#FF6A00]/40 text-[#94A3B8] hover:text-[#F8FAFC] font-medium text-sm transition-all cursor-pointer"
           >
-            <Download className="w-4 h-4 text-[#00E5FF]" />
-            <span>Brand Marks &amp; SVGs</span>
+            <Download className="w-4 h-4 text-[#FF6A00]" />
+            <span>Brand Kit &amp; PNGs</span>
           </button>
         </div>
 

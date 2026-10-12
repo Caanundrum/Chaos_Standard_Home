@@ -64,14 +64,14 @@ export const Header: React.FC<HeaderProps> = ({
           <a
             href="#games"
             onClick={() => sound.playClick()}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#F5A623]"
+            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#FF6A00]"
           >
             Games
           </a>
           <a
             href="#philosophy"
             onClick={() => sound.playClick()}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#00E5FF]"
+            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#FF6A00]"
           >
             About
           </a>
@@ -80,20 +80,20 @@ export const Header: React.FC<HeaderProps> = ({
               sound.playClick()
               onOpenBrandKit()
             }}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5"
+            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5 cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5 text-[#00E5FF]" />
-            <span>Brand &amp; SVGs</span>
+            <Download className="w-3.5 h-3.5 text-[#FF6A00]" />
+            <span>Brand &amp; Logos</span>
           </button>
           <button
             onClick={() => {
               sound.playClick()
               onReplaySplash()
             }}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5"
+            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5 cursor-pointer"
             title="Replay Logo Reveal"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#FF6A00]" />
             <span>Logo Reveal</span>
           </button>
         </nav>
@@ -106,13 +106,13 @@ export const Header: React.FC<HeaderProps> = ({
             onMouseEnter={() => setShowChaosTooltip(true)}
             onMouseLeave={() => setShowChaosTooltip(false)}
           >
-            <Sliders className={`w-3.5 h-3.5 ${chaosLevel > 60 ? 'text-[#FF2A5F] animate-spin' : 'text-[#F5A623]'}`} />
+            <Sliders className={`w-3.5 h-3.5 ${chaosLevel > 60 ? 'text-[#FF2A5F] animate-spin' : 'text-[#FF6A00]'}`} />
             <div className="flex flex-col">
               <div className="flex items-center justify-between gap-2">
                 <span className="font-mono text-[9px] uppercase tracking-wider text-[#64748B]">
                   Chaos Calibrator
                 </span>
-                <span className="font-mono text-[9px] font-bold text-[#F5A623]">
+                <span className="font-mono text-[9px] font-bold text-[#FF6A00]">
                   {chaosLevel}%
                 </span>
               </div>
@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
                 max="100"
                 value={chaosLevel}
                 onChange={handleChaosChange}
-                className="w-24 h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#F5A623]"
+                className="w-24 h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#FF6A00]"
                 aria-label="Chaos Level Calibrator"
               />
             </div>

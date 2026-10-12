@@ -23,8 +23,8 @@ export interface BrandAsset {
   name: string
   description: string
   file: string
-  category: 'Symbol' | 'Horizontal' | 'Stacked' | 'Small' | 'Presentation'
-  format: 'SVG'
+  category: 'Master' | 'Symbol' | 'Horizontal' | 'Stacked' | 'Wordmark' | 'Small' | 'Presentation'
+  format: 'SVG' | 'PNG' | 'JPG'
   aspectRatio: string
 }
 

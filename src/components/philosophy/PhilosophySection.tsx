@@ -15,7 +15,7 @@ export const PhilosophySection: React.FC = () => {
     {
       number: '01',
       title: 'AI as a Creative Engine',
-      accent: '#00E5FF',
+      accent: '#FF6A00',
       icon: Sparkles,
       tagline: 'Dynamic dungeon masters, living narratives, and emergent worlds.',
       description:
@@ -24,7 +24,7 @@ export const PhilosophySection: React.FC = () => {
     {
       number: '02',
       title: 'The Browser as the Console',
-      accent: '#00E5FF',
+      accent: '#94A3B8',
       icon: Monitor,
       tagline: 'Zero friction, zero installs, instant boot.',
       description:
@@ -33,7 +33,7 @@ export const PhilosophySection: React.FC = () => {
     {
       number: '03',
       title: 'Sentient Interfaces',
-      accent: '#FF9F43',
+      accent: '#FF8533',
       icon: Eye,
       tagline: 'Software that notices who is clicking.',
       description:
@@ -42,7 +42,7 @@ export const PhilosophySection: React.FC = () => {
     {
       number: '04',
       title: 'Controlled Chaos',
-      accent: '#8B5CF6',
+      accent: '#64748B',
       icon: Crosshair,
       tagline: 'Rigorous logic built for delightful emergence.',
       description:
@@ -53,12 +53,12 @@ export const PhilosophySection: React.FC = () => {
   return (
     <section id="philosophy" className="relative py-28 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/10">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-[#00E5FF]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-[#FF6A00]/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Section Header */}
       <div className="max-w-3xl mb-16">
-        <div className="font-mono text-xs text-[#00E5FF] uppercase tracking-[0.25em] mb-2 font-bold flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+        <div className="font-mono text-xs text-[#FF6A00] uppercase tracking-[0.25em] mb-2 font-bold flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
           ABOUT CHAOS STANDARD
         </div>
         <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#F8FAFC] tracking-tight mb-4">
@@ -117,11 +117,11 @@ export const PhilosophySection: React.FC = () => {
       </div>
 
       {/* The Browser Highlight Card */}
-      <div className="rounded-3xl bg-gradient-to-r from-[#171924] via-[#11131B] to-[#171924] border border-[#00E5FF]/25 p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+      <div className="rounded-3xl bg-gradient-to-r from-[#171924] via-[#11131B] to-[#171924] border border-[#FF6A00]/25 p-8 sm:p-12 relative overflow-hidden shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8">
-            <div className="font-mono text-xs text-[#00E5FF] uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
-              <Globe2 className="w-4 h-4 text-[#00E5FF]" />
+            <div className="font-mono text-xs text-[#FF6A00] uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+              <Globe2 className="w-4 h-4 text-[#FF6A00]" />
               THE PLATFORM ADVANTAGE
             </div>
             <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#F8FAFC] mb-4">
@@ -132,22 +132,22 @@ export const PhilosophySection: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4 text-xs font-mono text-[#F8FAFC]">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6A00]" />
                 <span>Zero Installation</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6A00]" />
                 <span>Instant Play URLs</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6A00]" />
                 <span>Hardware Accelerated WebGL</span>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-4 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-black/50 border border-white/10">
-            <Zap className="w-10 h-10 text-[#00E5FF] mb-3 animate-pulse" />
+            <Zap className="w-10 h-10 text-[#FF6A00] mb-3 animate-pulse" />
             <div className="font-mono text-xs uppercase text-[#94A3B8] mb-1">
               CHAOS INTEGRITY
             </div>
