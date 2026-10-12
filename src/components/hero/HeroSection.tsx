@@ -16,7 +16,7 @@ const FORBIDDEN_STEPS = [
   { text: 'Stop touching this button.', coherence: 54.1, status: 'Unstable' },
   { text: 'You are destabilizing the site...', coherence: 29.8, status: 'Critical' },
   { text: 'One more click breaks everything.', coherence: 8.5, status: 'Breach Imminent' },
-  { text: '💥 Zero Self-Control! Play "Do Not Press Submit" ↗', coherence: 0.0, status: 'Total Failure' }
+  { text: '💥 Play "Do Not Press Submit" ↗', coherence: 0.0, status: 'Total Failure' }
 ]
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -112,24 +112,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
 
         {/* Primary Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-14">
+        <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-4 mb-14 max-w-4xl mx-auto">
           {/* Explore Games Button */}
           <button
             onClick={() => {
               sound.playClick()
               onExploreGames()
             }}
-            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#FF6A00] to-[#E65500] text-[#05070A] font-bold text-base hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#FF6A00]/25 cursor-pointer"
+            className="flex-shrink-0 flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#FF6A00] to-[#E65500] text-[#05070A] font-bold text-base hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#FF6A00]/25 cursor-pointer whitespace-nowrap"
           >
             <Compass className="w-5 h-5 text-[#05070A]" />
             <span>Explore Games</span>
           </button>
 
           {/* Simple "Do Not Click" Challenge Button */}
-          <div className="relative flex items-center gap-2">
+          <div className="relative flex items-center gap-1.5 flex-shrink-0">
+            {isCompleted && (
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-0.5 rounded-full bg-[#FF6A00] text-[#05070A] font-mono text-[10px] font-extrabold uppercase shadow-md animate-bounce pointer-events-none">
+                Zero Self-Control!
+              </div>
+            )}
             <button
               onClick={handleForbiddenClick}
-              className={`flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-base transition-all cursor-pointer whitespace-nowrap ${
                 isCompleted
                   ? 'bg-[#FF6A00] text-[#05070A] shadow-lg shadow-[#FF6A00]/30 animate-pulse font-bold'
                   : clickCount > 0
@@ -140,7 +145,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {isCompleted ? (
                 <ExternalLink className="w-5 h-5 text-[#05070A]" />
               ) : (
-                <AlertTriangle className={`w-5 h-5 ${clickCount > 0 ? 'text-[#FF6A00]' : 'text-[#FF6A00]'}`} />
+                <AlertTriangle className="w-5 h-5 text-[#FF6A00]" />
               )}
               <span>{currentStep.text}</span>
             </button>
@@ -162,7 +167,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               sound.playClick()
               onOpenBrandKit()
             }}
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131B] border border-white/10 hover:border-[#FF6A00]/40 text-[#94A3B8] hover:text-[#F8FAFC] font-medium text-sm transition-all cursor-pointer"
+            className="flex-shrink-0 flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#11131B] border border-white/10 hover:border-[#FF6A00]/40 text-[#94A3B8] hover:text-[#F8FAFC] font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
           >
             <Download className="w-4 h-4 text-[#FF6A00]" />
             <span>Brand Kit &amp; PNGs</span>
