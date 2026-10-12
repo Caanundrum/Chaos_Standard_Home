@@ -18,6 +18,12 @@ interface Particle {
 export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ chaosLevel = 30 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const mouseRef = useRef<{ x: number; y: number; active: boolean }>({ x: -1000, y: -1000, active: false })
+  
+  // Track chaos level in a mutable ref so the 60fps render loop reacts instantly without re-creating particles
+  const chaosRef = useRef<number>(chaosLevel)
+  useEffect(() => {
+    chaosRef.current = chaosLevel
+  }, [chaosLevel])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -47,37 +53,41 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
     window.addEventListener('mousemove', handleMouseMove)
     document.addEventListener('mouseleave', handleMouseLeave)
 
-    // Reduced motion check
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // Generate calibration particles
-    const particleCount = Math.min(Math.floor((width * height) / 22000), 75)
-    const colors = ['#F5A623', '#00E5FF', '#94A3B8', '#8B5CF6']
+    // Strictly Hazard Orange, Warm Amber, and Slate Grey palette
+    const colors = ['#FF6A00', '#FF8533', '#FFA040', '#94A3B8', '#64748B']
+    const particleCount = Math.min(Math.floor((width * height) / 18000), 85)
     const particles: Particle[] = []
 
     for (let i = 0; i < particleCount; i++) {
+      const angle = Math.random() * Math.PI * 2
+      const speed = Math.random() * 0.8 + 0.4
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2.5 + 1.2,
-        baseAlpha: Math.random() * 0.35 + 0.15,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        size: Math.random() * 2.4 + 1.2,
+        baseAlpha: Math.random() * 0.35 + 0.25,
         color: colors[Math.floor(Math.random() * colors.length)],
-        type: Math.random() > 0.8 ? 'cross' : Math.random() > 0.65 ? 'ring' : 'dot'
+        type: Math.random() > 0.75 ? 'cross' : Math.random() > 0.6 ? 'ring' : 'dot'
       })
     }
 
     let time = 0
 
     const render = () => {
-      time += 0.01
+      time += 0.015
       ctx.clearRect(0, 0, width, height)
 
-      const chaosMultiplier = 0.5 + (chaosLevel / 100) * 1.5
+      // Continuous dynamic scale: from 0.4x at 0% to 4.5x speed at 100%!
+      const currentChaos = chaosRef.current
+      const speedMultiplier = 0.35 + (currentChaos / 100) * 3.8
+      const connectionDist = 70 + (currentChaos / 100) * 75 // Connection range expands with chaos
 
-      // Draw faint metric grid lines
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)'
+      // Faint metric grid lines
+      ctx.strokeStyle = `rgba(255, 106, 0, ${0.01 + (currentChaos / 100) * 0.03})`
       ctx.lineWidth = 1
       const gridSpacing = 80
       for (let x = 0; x < width; x += gridSpacing) {
@@ -98,14 +108,15 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
         const p = particles[i]
 
         if (!prefersReducedMotion) {
-          // Chaos level influence: at 0 it's rigid/orthogonal, at 100 it has higher turbulence
-          if (chaosLevel < 15) {
-            // Strict Standard: Orthogonal slow drift
-            p.x += Math.sign(p.vx) * 0.2
-            p.y += Math.sign(p.vy) * 0.2
+          if (currentChaos < 10) {
+            // Strict Standard: Orthogonal slow grid drift
+            p.x += Math.sign(p.vx) * 0.3
+            p.y += Math.sign(p.vy) * 0.3
           } else {
-            p.x += p.vx * chaosMultiplier
-            p.y += p.vy * chaosMultiplier
+            // Fluid turbulence that accelerates dramatically with chaos
+            const noise = Math.sin(time + i) * (currentChaos / 100) * 0.4
+            p.x += (p.vx + noise) * speedMultiplier
+            p.y += (p.vy + noise) * speedMultiplier
           }
 
           // Screen wrap
@@ -114,7 +125,7 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
           if (p.y < 0) p.y = height
           if (p.y > height) p.y = 0
 
-          // Mouse interaction (repulsion & focal field)
+          // Mouse repulsion
           if (mouseRef.current.active) {
             const dx = p.x - mouseRef.current.x
             const dy = p.y - mouseRef.current.y
@@ -122,7 +133,7 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
             const maxDist = 180
 
             if (dist < maxDist && dist > 0) {
-              const force = (1 - dist / maxDist) * 1.5
+              const force = (1 - dist / maxDist) * 2.2
               p.x += (dx / dist) * force * 3
               p.y += (dy / dist) * force * 3
             }
@@ -133,7 +144,12 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
         ctx.save()
         ctx.fillStyle = p.color
         ctx.strokeStyle = p.color
-        ctx.globalAlpha = p.baseAlpha
+        ctx.globalAlpha = Math.min(0.85, p.baseAlpha * (0.8 + (currentChaos / 100) * 0.6))
+
+        if (currentChaos > 60) {
+          ctx.shadowColor = '#FF6A00'
+          ctx.shadowBlur = (currentChaos - 60) * 0.25
+        }
 
         if (p.type === 'cross') {
           const arm = p.size * 2
@@ -154,21 +170,22 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
         }
         ctx.restore()
 
-        // Subtle connection lines between close particles
+        // Branching connection lines between nearby particles
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j]
           const dx = p.x - p2.x
           const dy = p.y - p2.y
           const dist = Math.sqrt(dx * dx + dy * dy)
 
-          if (dist < 110) {
+          if (dist < connectionDist) {
             ctx.save()
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p2.x, p2.y)
             ctx.strokeStyle = p.color
-            ctx.globalAlpha = (1 - dist / 110) * 0.12 * (chaosMultiplier > 1 ? 1.4 : 1)
-            ctx.lineWidth = 0.75
+            const alpha = (1 - dist / connectionDist) * 0.18 * (0.6 + (currentChaos / 100) * 1.4)
+            ctx.globalAlpha = alpha
+            ctx.lineWidth = currentChaos > 70 ? 1.2 : 0.75
             ctx.stroke()
             ctx.restore()
           }
@@ -186,12 +203,12 @@ export const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({ ch
       window.removeEventListener('mousemove', handleMouseMove)
       document.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [chaosLevel])
+  }, []) // Empty dependency array: Particles persist continuously without re-randomizing on slider movement!
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-80"
+      className="fixed inset-0 pointer-events-none z-0"
       aria-hidden="true"
     />
   )
