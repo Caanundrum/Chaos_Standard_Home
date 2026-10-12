@@ -15,12 +15,15 @@ export function App() {
   const [chaosLevel, setChaosLevel] = useState<number>(30)
   const [brandKitOpen, setBrandKitOpen] = useState<boolean>(false)
   const [terminalOpen, setTerminalOpen] = useState<boolean>(false)
-  const [currentPage, setCurrentPage] = useState<'home' | 'games'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'games' | 'about'>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname.toLowerCase()
       const hash = window.location.hash.toLowerCase()
       if (path === '/games' || path === '/games/' || hash === '#games' || hash === '#/games') {
         return 'games'
+      }
+      if (path === '/about' || path === '/about/' || hash === '#about' || hash === '#/about') {
+        return 'about'
       }
     }
     return 'home'
@@ -42,6 +45,8 @@ export function App() {
       const hash = window.location.hash.toLowerCase()
       if (path === '/games' || path === '/games/' || hash === '#games' || hash === '#/games') {
         setCurrentPage('games')
+      } else if (path === '/about' || path === '/about/' || hash === '#about' || hash === '#/about') {
+        setCurrentPage('about')
       } else {
         setCurrentPage('home')
       }
@@ -76,10 +81,10 @@ export function App() {
     setShowSplash(true)
   }
 
-  const handleNavigate = (page: 'home' | 'games', targetHash?: string) => {
+  const handleNavigate = (page: 'home' | 'games' | 'about', targetHash?: string) => {
     sound.playClick()
     setCurrentPage(page)
-    const newPath = page === 'games' ? '/games' : '/'
+    const newPath = page === 'games' ? '/games' : page === 'about' ? '/about' : '/'
     if (window.location.pathname !== newPath) {
       window.history.pushState({}, '', newPath)
     }
@@ -101,7 +106,7 @@ export function App() {
   }
 
   return (
-    <div className="relative min-h-screen bg-[#090A0F] text-[#F8FAFC] selection:bg-[#FF6A00] selection:text-[#090A0F]">
+    <div className="relative min-h-screen bg-[#090A0F] text-[#F8FAFC] selection:bg-[#FF6A00] selection:text-[#090A0F] flex flex-col justify-between">
       {/* 60fps Interactive Physics & Telemetry Canvas Background */}
       <InteractiveBackground chaosLevel={chaosLevel} />
 
@@ -122,26 +127,34 @@ export function App() {
       />
 
       {/* Main Studio Content */}
-      <main className="relative z-10 flex flex-col">
-        {currentPage === 'home' ? (
-          <>
-            {/* Viewport 1: Clean, Gluff-Free Studio Hero */}
-            <HeroSection
-              chaosLevel={chaosLevel}
-              onExploreGames={() => handleNavigate('games')}
-              onOpenBrandKit={() => setBrandKitOpen(true)}
-              onTriggerAnomaly={handleTriggerAnomaly}
-            />
+      <main className="relative z-10 flex flex-col flex-1">
+        {currentPage === 'home' && (
+          /* Viewport 1: Pure, Iconic Studio Landing */
+          <HeroSection
+            chaosLevel={chaosLevel}
+            onExploreGames={() => handleNavigate('games')}
+            onOpenBrandKit={() => setBrandKitOpen(true)}
+            onTriggerAnomaly={handleTriggerAnomaly}
+            onNavigateToAbout={() => handleNavigate('about')}
+          />
+        )}
 
-            {/* Viewport 2: Studio Philosophy & Manifesto */}
-            <PhilosophySection />
-          </>
-        ) : (
+        {currentPage === 'games' && (
           /* Dedicated Games Page View */
           <div className="pt-6 pb-12">
             <GameCatalogSection
               games={GAMES}
               onBackToHome={() => handleNavigate('home')}
+            />
+          </div>
+        )}
+
+        {currentPage === 'about' && (
+          /* Dedicated Studio Philosophy & Manifesto Page View */
+          <div className="pt-6 pb-12">
+            <PhilosophySection
+              onBackToHome={() => handleNavigate('home')}
+              onExploreGames={() => handleNavigate('games')}
             />
           </div>
         )}

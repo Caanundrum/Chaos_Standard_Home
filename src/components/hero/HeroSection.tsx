@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { ChaosLogo } from '../brand/ChaosLogo'
 import { sound } from '../../utils/sound'
-import { ArrowDown, AlertTriangle, Download, Compass, ExternalLink, RotateCcw } from 'lucide-react'
+import { AlertTriangle, Download, Compass, ExternalLink, RotateCcw } from 'lucide-react'
 
 interface HeroSectionProps {
   chaosLevel: number
   onExploreGames: () => void
   onOpenBrandKit: () => void
   onTriggerAnomaly: () => void
+  onNavigateToAbout?: () => void
 }
 
 const FORBIDDEN_STEPS = [
@@ -23,7 +24,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   chaosLevel: _chaosLevel,
   onExploreGames,
   onOpenBrandKit,
-  onTriggerAnomaly
+  onTriggerAnomaly,
+  onNavigateToAbout
 }) => {
   const [clickCount, setClickCount] = useState<number>(0)
 
@@ -175,16 +177,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
-      {/* Scroll indicator pointing to About section */}
-      <a
-        href="#philosophy"
-        onClick={() => sound.playClick()}
-        className="mt-10 flex flex-col items-center gap-2 text-[#64748B] hover:text-[#FF6A00] transition-colors focus:outline-none"
-        aria-label="Scroll down to studio overview"
-      >
-        <span className="font-mono text-[10px] tracking-widest uppercase">ABOUT CHAOS STANDARD</span>
-        <ArrowDown className="w-4 h-4 animate-bounce" />
-      </a>
+      {/* Quick link button to About page */}
+      {onNavigateToAbout && (
+        <button
+          onClick={() => {
+            sound.playClick()
+            onNavigateToAbout()
+          }}
+          className="mt-10 inline-flex items-center gap-2 text-xs font-mono text-[#64748B] hover:text-[#FF6A00] transition-colors cursor-pointer group"
+          title="Learn about Chaos Standard studio"
+        >
+          <span className="tracking-widest uppercase">ABOUT CHAOS STANDARD</span>
+          <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+        </button>
+      )}
     </section>
   )
 }

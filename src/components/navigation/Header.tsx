@@ -9,8 +9,8 @@ interface HeaderProps {
   onOpenBrandKit: () => void
   onOpenTerminal: () => void
   onReplaySplash: () => void
-  currentPage?: 'home' | 'games'
-  onNavigate?: (page: 'home' | 'games', hash?: string) => void
+  currentPage?: 'home' | 'games' | 'about'
+  onNavigate?: (page: 'home' | 'games' | 'about', hash?: string) => void
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
     return 'Delightful Chaos'
   }
 
-  const handleNavClick = (page: 'home' | 'games', hash?: string) => {
+  const handleNavClick = (page: 'home' | 'games' | 'about', hash?: string) => {
     sound.playClick()
     setMobileMenuOpen(false)
     if (onNavigate) {
@@ -94,8 +94,12 @@ export const Header: React.FC<HeaderProps> = ({
             Games
           </button>
           <button
-            onClick={() => handleNavClick('home', 'philosophy')}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#FF6A00] cursor-pointer"
+            onClick={() => handleNavClick('about')}
+            className={`text-sm font-medium transition-colors relative py-1 cursor-pointer ${
+              currentPage === 'about'
+                ? 'text-[#FF6A00] font-bold border-b-2 border-[#FF6A00]'
+                : 'text-[#94A3B8] hover:text-[#F8FAFC]'
+            }`}
           >
             About
           </button>
@@ -212,8 +216,8 @@ export const Header: React.FC<HeaderProps> = ({
             Games Catalog
           </button>
           <button
-            onClick={() => handleNavClick('home', 'philosophy')}
-            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#FF6A00]"
+            onClick={() => handleNavClick('about')}
+            className={`text-left text-base font-semibold ${currentPage === 'about' ? 'text-[#FF6A00]' : 'text-[#F8FAFC] hover:text-[#FF6A00]'}`}
           >
             About Chaos Standard
           </button>

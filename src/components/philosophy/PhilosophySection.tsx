@@ -7,10 +7,20 @@ import {
   Crosshair,
   Zap,
   Globe2,
-  CheckCircle2
+  CheckCircle2,
+  ArrowLeft,
+  ArrowRight
 } from 'lucide-react'
 
-export const PhilosophySection: React.FC = () => {
+interface PhilosophySectionProps {
+  onBackToHome?: () => void
+  onExploreGames?: () => void
+}
+
+export const PhilosophySection: React.FC<PhilosophySectionProps> = ({
+  onBackToHome,
+  onExploreGames
+}) => {
   const pillars = [
     {
       number: '01',
@@ -51,7 +61,23 @@ export const PhilosophySection: React.FC = () => {
   ]
 
   return (
-    <section id="philosophy" className="relative py-28 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/10">
+    <section id="philosophy" className="relative pt-24 pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      {/* Top Breadcrumb & Return to Home */}
+      {onBackToHome && (
+        <div className="mb-8">
+          <button
+            onClick={() => {
+              sound.playClick()
+              onBackToHome()
+            }}
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-[#94A3B8] hover:text-[#FF6A00] transition-colors cursor-pointer group"
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#FF6A00]" />
+            <span>RETURN TO STUDIO HOME</span>
+          </button>
+        </div>
+      )}
+
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-[#FF6A00]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -159,6 +185,34 @@ export const PhilosophySection: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Action Footer for About page */}
+      <div className="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        {onBackToHome && (
+          <button
+            onClick={() => {
+              sound.playClick()
+              onBackToHome()
+            }}
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-[#94A3B8] hover:text-[#FF6A00] transition-colors cursor-pointer group"
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#FF6A00]" />
+            <span>Return to Studio Home</span>
+          </button>
+        )}
+        {onExploreGames && (
+          <button
+            onClick={() => {
+              sound.playClick()
+              onExploreGames()
+            }}
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#FF6A00] to-[#E65500] text-[#05070A] font-bold text-xs font-mono transition-all hover:brightness-110 active:scale-95 cursor-pointer flex items-center gap-2 shadow-lg shadow-[#FF6A00]/25"
+          >
+            <span>Explore the Games Catalog</span>
+            <ArrowRight className="w-4 h-4 text-[#05070A]" />
+          </button>
+        )}
       </div>
     </section>
   )

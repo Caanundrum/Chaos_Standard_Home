@@ -8,7 +8,7 @@ interface FooterProps {
   onOpenBrandKit: () => void
   onOpenTerminal: () => void
   onReplaySplash: () => void
-  onNavigate?: (page: 'home' | 'games', hash?: string) => void
+  onNavigate?: (page: 'home' | 'games' | 'about', hash?: string) => void
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -125,6 +125,15 @@ export const Footer: React.FC<FooterProps> = ({
               Links &amp; Code
             </div>
             <ul className="space-y-3 text-sm text-[#94A3B8]">
+              <li>
+                <button
+                  onClick={() => onNavigate ? onNavigate('about') : undefined}
+                  className="hover:text-[#FF6A00] transition-colors flex items-center gap-1.5 cursor-pointer bg-transparent border-0 p-0 text-left"
+                >
+                  <span className="hover:underline">About Chaos Standard (Manifesto)</span>
+                  <span className="text-[10px]">↗</span>
+                </button>
+              </li>
               <li>
                 <a
                   href="https://github.com/Caanundrum/Chaos_Standard_Home"
