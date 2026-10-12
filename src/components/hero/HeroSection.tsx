@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ChaosLogo } from '../brand/ChaosLogo'
 import { sound } from '../../utils/sound'
-import { ArrowDown, Sparkles, ShieldAlert, Cpu, Download, Compass } from 'lucide-react'
+import { ArrowDown, AlertTriangle, ShieldAlert, Cpu, Download, Compass, ExternalLink, RotateCcw } from 'lucide-react'
 
 interface HeroSectionProps {
   chaosLevel: number
@@ -10,20 +10,56 @@ interface HeroSectionProps {
   onTriggerAnomaly: () => void
 }
 
+const FORBIDDEN_STEPS = [
+  { text: '⚠️ Do Not Click', coherence: 94.2, status: 'Stable' },
+  { text: 'Hey. I said do not click.', coherence: 78.4, status: 'Frayed' },
+  { text: 'Stop touching this button.', coherence: 54.1, status: 'Unstable' },
+  { text: 'You are destabilizing the site...', coherence: 29.8, status: 'Critical' },
+  { text: 'One more click breaks everything.', coherence: 8.5, status: 'Breach Imminent' },
+  { text: '💥 Zero Self-Control! Play "Do Not Press Submit" ↗', coherence: 0.0, status: 'Total Failure' }
+]
+
 export const HeroSection: React.FC<HeroSectionProps> = ({
   chaosLevel,
   onExploreGames,
   onOpenBrandKit,
   onTriggerAnomaly
 }) => {
-  const [realityCoherence, setRealityCoherence] = useState<number>(94.2)
-  const [anomaliesPoked, setAnomaliesPoked] = useState<number>(0)
+  const [clickCount, setClickCount] = useState<number>(0)
 
-  const handlePokeAnomaly = () => {
-    sound.playGlitch()
-    setAnomaliesPoked(prev => prev + 1)
-    setRealityCoherence(prev => Math.max(12.4, +(prev - (Math.random() * 8 + 3)).toFixed(1)))
+  const isCompleted = clickCount >= FORBIDDEN_STEPS.length - 1
+  const currentStep = FORBIDDEN_STEPS[Math.min(clickCount, FORBIDDEN_STEPS.length - 1)]
+
+  const handleForbiddenClick = () => {
+    if (isCompleted) {
+      // Clear payoff: Directly launch the actual game!
+      sound.playClick()
+      window.open('https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/', '_blank', 'noopener,noreferrer')
+      return
+    }
+
+    const nextCount = clickCount + 1
+    setClickCount(nextCount)
     onTriggerAnomaly()
+
+    if (nextCount === 1) {
+      sound.playClick()
+    } else if (nextCount === 2) {
+      sound.playHover()
+    } else if (nextCount === 3) {
+      sound.playGlitch()
+    } else if (nextCount === 4) {
+      sound.playBuzzer()
+    } else if (nextCount >= 5) {
+      sound.playBuzzer()
+      sound.playStudioReveal()
+    }
+  }
+
+  const handleReset = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    sound.playClick()
+    setClickCount(0)
   }
 
   return (
@@ -39,8 +75,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <span>ZERO INSTALL</span>
       </div>
 
-      {/* Main Emblem Showcase with Interactive Hover */}
-      <div className="relative mb-8 group cursor-pointer" onClick={handlePokeAnomaly}>
+      {/* Main Emblem Showcase with Interactive Reaction */}
+      <div className="relative mb-8 group cursor-pointer" onClick={handleForbiddenClick} title="Poke the Terminal">
         <div className="w-40 h-40 sm:w-48 sm:h-48 relative z-10 transition-transform duration-500 group-hover:scale-105">
           <ChaosLogo variant="symbol" theme="dark" interactive={false} />
         </div>
@@ -63,6 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Primary Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-14">
+          {/* Explore Games Button */}
           <button
             onClick={() => {
               sound.playClick()
@@ -74,14 +111,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <span>Explore Games</span>
           </button>
 
-          <button
-            onClick={handlePokeAnomaly}
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131B] border border-white/15 hover:border-[#FF6A00]/60 text-[#F8FAFC] font-semibold text-base hover:text-[#FF6A00] transition-all cursor-pointer"
-          >
-            <Sparkles className="w-5 h-5 text-[#FF6A00]" />
-            <span>Pester Anomaly {anomaliesPoked > 0 && `(${anomaliesPoked})`}</span>
-          </button>
+          {/* Simple "Do Not Click" Challenge Button */}
+          <div className="relative flex items-center gap-2">
+            <button
+              onClick={handleForbiddenClick}
+              className={`flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base transition-all cursor-pointer ${
+                isCompleted
+                  ? 'bg-[#FF6A00] text-[#05070A] shadow-lg shadow-[#FF6A00]/30 animate-pulse font-bold'
+                  : clickCount > 0
+                  ? 'bg-[#181B26] border border-[#FF6A00] text-[#FF6A00] shadow-md'
+                  : 'bg-[#11131B] border border-white/15 hover:border-[#FF6A00]/60 text-[#F8FAFC] hover:text-[#FF6A00]'
+              }`}
+            >
+              {isCompleted ? (
+                <ExternalLink className="w-5 h-5 text-[#05070A]" />
+              ) : (
+                <AlertTriangle className={`w-5 h-5 ${clickCount > 0 ? 'text-[#FF6A00]' : 'text-[#FF6A00]'}`} />
+              )}
+              <span>{currentStep.text}</span>
+            </button>
 
+            {clickCount > 0 && (
+              <button
+                onClick={handleReset}
+                title="Reset Test"
+                className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-[#64748B] hover:text-[#F8FAFC] transition-colors cursor-pointer"
+              >
+                <RotateCcw className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          {/* Brand Kit Button */}
           <button
             onClick={() => {
               sound.playClick()
@@ -98,7 +159,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
           <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
             <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <Cpu className="w-3 h-3 text-[#00E5FF]" />
+              <Cpu className="w-3 h-3 text-[#FF6A00]" />
               <span>Platform</span>
             </div>
             <div className="font-mono text-xs font-bold text-[#F8FAFC] mt-1">
@@ -108,30 +169,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
             <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <ShieldAlert className="w-3 h-3 text-[#FF9F43]" />
-              <span>Reality Coherence</span>
+              <ShieldAlert className="w-3 h-3 text-[#FF6A00]" />
+              <span>Impulse Control</span>
             </div>
-            <div className="font-mono text-xs font-bold text-[#FF9F43] mt-1">
-              {realityCoherence}% (Tolerable)
-            </div>
-          </div>
-
-          <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#FF2A5F]" />
-              <span>4th Wall Integrity</span>
-            </div>
-            <div className="font-mono text-xs font-bold text-[#FF2A5F] mt-1">
-              12.0% (Cracking)
+            <div className="font-mono text-xs font-bold text-[#FF6A00] mt-1">
+              {currentStep.coherence}% ({currentStep.status})
             </div>
           </div>
 
           <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
             <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+              <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+              <span>Entropy Level</span>
+            </div>
+            <div className="font-mono text-xs font-bold text-[#FF6A00] mt-1">
+              {chaosLevel}% Calibrated
+            </div>
+          </div>
+
+          <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
+            <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#94A3B8]" />
               <span>Built With</span>
             </div>
-            <div className="font-mono text-xs font-bold text-[#00E5FF] mt-1">
+            <div className="font-mono text-xs font-bold text-[#94A3B8] mt-1">
               Generative AI
             </div>
           </div>
@@ -149,7 +210,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           sound.playClick()
           onExploreGames()
         }}
-        className="mt-12 flex flex-col items-center gap-2 text-[#64748B] hover:text-[#F5A623] transition-colors focus:outline-none"
+        className="mt-12 flex flex-col items-center gap-2 text-[#64748B] hover:text-[#FF6A00] transition-colors focus:outline-none"
         aria-label="Scroll down to games"
       >
         <span className="font-mono text-[10px] tracking-widest uppercase">DISCOVER THE GAMES</span>
