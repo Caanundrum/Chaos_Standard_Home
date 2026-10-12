@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ChaosLogo } from '../brand/ChaosLogo'
 import { sound } from '../../utils/sound'
-import { ArrowDown, AlertTriangle, ShieldAlert, Cpu, Download, Compass, ExternalLink, RotateCcw } from 'lucide-react'
+import { ArrowDown, AlertTriangle, Download, Compass, ExternalLink, RotateCcw } from 'lucide-react'
 
 interface HeroSectionProps {
   chaosLevel: number
@@ -20,7 +20,7 @@ const FORBIDDEN_STEPS = [
 ]
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  chaosLevel,
+  chaosLevel: _chaosLevel,
   onExploreGames,
   onOpenBrandKit,
   onTriggerAnomaly
@@ -173,68 +173,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <span>Brand Kit &amp; PNGs</span>
           </button>
         </div>
-
-        {/* Real-Time Telemetry HUD */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
-          <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <Cpu className="w-3 h-3 text-[#FF6A00]" />
-              <span>Platform</span>
-            </div>
-            <div className="font-mono text-xs font-bold text-[#F8FAFC] mt-1">
-              Browser Native
-            </div>
-          </div>
-
-          <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <ShieldAlert className="w-3 h-3 text-[#FF6A00]" />
-              <span>Impulse Control</span>
-            </div>
-            <div className="font-mono text-xs font-bold text-[#FF6A00] mt-1">
-              {currentStep.coherence}% ({currentStep.status})
-            </div>
-          </div>
-
-          <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-              <span>Entropy Level</span>
-            </div>
-            <div className="font-mono text-xs font-bold text-[#FF6A00] mt-1">
-              {chaosLevel}% Calibrated
-            </div>
-          </div>
-
-          <div className="p-3 rounded-lg bg-[#11131B]/80 border border-white/5 text-left">
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-[#64748B] uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#94A3B8]" />
-              <span>Built With</span>
-            </div>
-            <div className="font-mono text-xs font-bold text-[#94A3B8] mt-1">
-              Generative AI
-            </div>
-          </div>
-        </div>
-
-        {/* Footnote humor */}
-        <div className="mt-8 font-mono text-[11px] text-[#64748B] tracking-wide">
-          Notice: No browsers were permanently harmed in the calibration of this viewport (Entropy: {chaosLevel}%).
-        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <button
-        onClick={() => {
-          sound.playClick()
-          onExploreGames()
-        }}
-        className="mt-12 flex flex-col items-center gap-2 text-[#64748B] hover:text-[#FF6A00] transition-colors focus:outline-none"
-        aria-label="Scroll down to games"
+      {/* Scroll indicator pointing to About section */}
+      <a
+        href="#philosophy"
+        onClick={() => sound.playClick()}
+        className="mt-10 flex flex-col items-center gap-2 text-[#64748B] hover:text-[#FF6A00] transition-colors focus:outline-none"
+        aria-label="Scroll down to studio overview"
       >
-        <span className="font-mono text-[10px] tracking-widest uppercase">DISCOVER THE GAMES</span>
+        <span className="font-mono text-[10px] tracking-widest uppercase">ABOUT CHAOS STANDARD</span>
         <ArrowDown className="w-4 h-4 animate-bounce" />
-      </button>
+      </a>
     </section>
   )
 }

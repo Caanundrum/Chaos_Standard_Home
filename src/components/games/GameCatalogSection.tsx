@@ -11,14 +11,19 @@ import {
   Flame,
   Bot,
   Users,
-  CheckCircle2
+  CheckCircle2,
+  ArrowLeft
 } from 'lucide-react'
 
 interface GameCatalogSectionProps {
   games?: GameInfo[]
+  onBackToHome?: () => void
 }
 
-export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _games }) => {
+export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
+  games: _games,
+  onBackToHome
+}) => {
   // --- Game 1: Hallucinated Dungeons State ---
   const [d20Roll, setD20Roll] = useState<number | null>(18)
   const [isRolling, setIsRolling] = useState<boolean>(false)
@@ -129,12 +134,28 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _
   }
 
   return (
-    <section id="games" className="relative py-28 px-4 sm:px-6 max-w-7xl mx-auto">
+    <section id="games" className="relative pt-24 pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      {/* Top Breadcrumb & Return to Home */}
+      {onBackToHome && (
+        <div className="mb-8">
+          <button
+            onClick={() => {
+              sound.playClick()
+              onBackToHome()
+            }}
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-[#94A3B8] hover:text-[#FF6A00] transition-colors cursor-pointer group"
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#FF6A00]" />
+            <span>RETURN TO STUDIO HOME</span>
+          </button>
+        </div>
+      )}
+
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-white/10">
         <div>
-          <div className="font-mono text-xs text-[#00E5FF] uppercase tracking-[0.25em] mb-2 font-bold flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+          <div className="font-mono text-xs text-[#FF6A00] uppercase tracking-[0.25em] mb-2 font-bold flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
             GAMES CATALOG
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#F8FAFC]">
@@ -524,6 +545,30 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({ games: _
           </div>
         </article>
       </div>
+
+      {/* Return to Studio Manifesto Banner */}
+      {onBackToHome && (
+        <div className="mt-20 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <div className="font-mono text-xs text-[#FF6A00] uppercase tracking-wider font-bold mb-1">
+              CHAOS STANDARD STUDIO
+            </div>
+            <p className="text-sm text-[#94A3B8]">
+              Want to learn more about our design philosophy and how we build browser games with AI?
+            </p>
+          </div>
+          <button
+            onClick={() => {
+              sound.playClick()
+              onBackToHome()
+            }}
+            className="flex-shrink-0 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-mono text-xs font-bold transition-all cursor-pointer flex items-center gap-2 hover:border-[#FF6A00]/50"
+          >
+            <ArrowLeft className="w-4 h-4 text-[#FF6A00]" />
+            <span>Studio About &amp; Philosophy</span>
+          </button>
+        </div>
+      )}
     </section>
   )
 }

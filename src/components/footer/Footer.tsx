@@ -8,12 +8,14 @@ interface FooterProps {
   onOpenBrandKit: () => void
   onOpenTerminal: () => void
   onReplaySplash: () => void
+  onNavigate?: (page: 'home' | 'games', hash?: string) => void
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onOpenBrandKit,
   onOpenTerminal,
-  onReplaySplash
+  onReplaySplash,
+  onNavigate
 }) => {
   return (
     <footer className="relative bg-[#05070A] border-t border-white/10 pt-20 pb-14 px-4 sm:px-6 overflow-hidden">
@@ -24,7 +26,13 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Col 1: Brand & Bio (5 cols) */}
           <div className="md:col-span-5 flex flex-col items-start">
-            <ChaosLogo variant="horizontal" theme="dark" interactive={true} />
+            <button
+              onClick={() => onNavigate ? onNavigate('home') : undefined}
+              className="bg-transparent border-0 p-0 cursor-pointer text-left focus:outline-none"
+              title="Return to Studio Home"
+            >
+              <ChaosLogo variant="horizontal" theme="dark" interactive={false} />
+            </button>
             <p className="mt-4 text-sm text-[#94A3B8] max-w-sm leading-relaxed">
               Unconventional browser games created with AI. Built for instant play, fourth-wall breaks, and software that probably has opinions about you.
             </p>
@@ -67,9 +75,13 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Col 2: Games (3 cols) */}
           <div className="md:col-span-3">
-            <div className="font-mono text-xs uppercase tracking-widest text-[#FF6A00] font-bold mb-4">
-              Games
-            </div>
+            <button
+              onClick={() => onNavigate ? onNavigate('games') : undefined}
+              className="font-mono text-xs uppercase tracking-widest text-[#FF6A00] font-bold mb-4 hover:underline cursor-pointer bg-transparent border-0 p-0 flex items-center gap-1.5"
+            >
+              <span>Games Catalog</span>
+              <span className="text-[10px]">↗</span>
+            </button>
             <ul className="space-y-3 text-sm text-[#94A3B8]">
               <li>
                 <a
@@ -96,14 +108,13 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
               <li>
-                <a
-                  href="#games"
-                  onClick={() => sound.playClick()}
-                  className="hover:text-[#F8FAFC] transition-colors flex items-center justify-between"
+                <button
+                  onClick={() => onNavigate ? onNavigate('games') : undefined}
+                  className="hover:text-[#F8FAFC] transition-colors flex items-center justify-between w-full bg-transparent border-0 p-0 text-left cursor-pointer"
                 >
-                  <span>Project [REDACTED]</span>
+                  <span className="hover:underline">Project [REDACTED]</span>
                   <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-[#FF6A00]">Classified</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>

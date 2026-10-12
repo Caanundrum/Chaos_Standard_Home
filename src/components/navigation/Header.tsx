@@ -9,6 +9,8 @@ interface HeaderProps {
   onOpenBrandKit: () => void
   onOpenTerminal: () => void
   onReplaySplash: () => void
+  currentPage?: 'home' | 'games'
+  onNavigate?: (page: 'home' | 'games', hash?: string) => void
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -16,7 +18,9 @@ export const Header: React.FC<HeaderProps> = ({
   setChaosLevel,
   onOpenBrandKit,
   onOpenTerminal,
-  onReplaySplash
+  onReplaySplash,
+  currentPage = 'home',
+  onNavigate
 }) => {
   const [muted, setMuted] = useState<boolean>(sound.isMuted())
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
@@ -47,34 +51,54 @@ export const Header: React.FC<HeaderProps> = ({
     return 'Delightful Chaos'
   }
 
+  const handleNavClick = (page: 'home' | 'games', hash?: string) => {
+    sound.playClick()
+    setMobileMenuOpen(false)
+    if (onNavigate) {
+      onNavigate(page, hash)
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-[#090A0F]/85 backdrop-blur-xl border-b border-white/8 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
         {/* Studio Identity Brand Lockup */}
-        <a
-          href="#hero"
-          className="flex items-center group cursor-pointer focus:outline-none"
-          onClick={() => sound.playClick()}
+        <button
+          onClick={() => handleNavClick('home')}
+          className="flex items-center group cursor-pointer focus:outline-none bg-transparent border-0 p-0 text-left"
+          title="Return to Studio Home"
         >
           <ChaosLogo variant="horizontal" theme="dark" interactive={false} />
-        </a>
+        </button>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-7">
-          <a
-            href="#games"
-            onClick={() => sound.playClick()}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#FF6A00]"
+          <button
+            onClick={() => handleNavClick('home')}
+            className={`text-sm font-medium transition-colors relative py-1 cursor-pointer ${
+              currentPage === 'home'
+                ? 'text-[#FF6A00] font-bold border-b-2 border-[#FF6A00]'
+                : 'text-[#94A3B8] hover:text-[#F8FAFC]'
+            }`}
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleNavClick('games')}
+            className={`text-sm font-medium transition-colors relative py-1 cursor-pointer ${
+              currentPage === 'games'
+                ? 'text-[#FF6A00] font-bold border-b-2 border-[#FF6A00]'
+                : 'text-[#94A3B8] hover:text-[#F8FAFC]'
+            }`}
           >
             Games
-          </a>
-          <a
-            href="#philosophy"
-            onClick={() => sound.playClick()}
-            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#FF6A00]"
+          </button>
+          <button
+            onClick={() => handleNavClick('home', 'philosophy')}
+            className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors relative py-1 hover:border-b-2 hover:border-[#FF6A00] cursor-pointer"
           >
             About
-          </a>
+          </button>
           <button
             onClick={() => {
               sound.playClick()
@@ -83,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="text-sm font-medium text-[#94A3B8] hover:text-[#F8FAFC] transition-colors flex items-center gap-1.5 cursor-pointer"
           >
             <Download className="w-3.5 h-3.5 text-[#FF6A00]" />
-            <span>Brand &amp; Logos</span>
+            <span>Brand Kit</span>
           </button>
           <button
             onClick={() => {
@@ -175,36 +199,34 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#0E1017] border-b border-white/10 px-6 py-6 flex flex-col gap-5 animate-in slide-in-from-top">
-          <a
-            href="#games"
-            onClick={() => {
-              sound.playClick()
-              setMobileMenuOpen(false)
-            }}
-            className="text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF]"
+          <button
+            onClick={() => handleNavClick('home')}
+            className={`text-left text-base font-semibold ${currentPage === 'home' ? 'text-[#FF6A00]' : 'text-[#F8FAFC] hover:text-[#FF6A00]'}`}
           >
-            Games
-          </a>
-          <a
-            href="#philosophy"
-            onClick={() => {
-              sound.playClick()
-              setMobileMenuOpen(false)
-            }}
-            className="text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF]"
+            Home
+          </button>
+          <button
+            onClick={() => handleNavClick('games')}
+            className={`text-left text-base font-semibold ${currentPage === 'games' ? 'text-[#FF6A00]' : 'text-[#F8FAFC] hover:text-[#FF6A00]'}`}
+          >
+            Games Catalog
+          </button>
+          <button
+            onClick={() => handleNavClick('home', 'philosophy')}
+            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#FF6A00]"
           >
             About Chaos Standard
-          </a>
+          </button>
           <button
             onClick={() => {
               sound.playClick()
               setMobileMenuOpen(false)
               onOpenBrandKit()
             }}
-            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF] flex items-center gap-2"
+            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#FF6A00] flex items-center gap-2"
           >
-            <Download className="w-4 h-4 text-[#00E5FF]" />
-            <span>Brand &amp; SVGs</span>
+            <Download className="w-4 h-4 text-[#FF6A00]" />
+            <span>Brand Kit</span>
           </button>
           <button
             onClick={() => {

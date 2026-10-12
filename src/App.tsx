@@ -15,6 +15,17 @@ export function App() {
   const [chaosLevel, setChaosLevel] = useState<number>(30)
   const [brandKitOpen, setBrandKitOpen] = useState<boolean>(false)
   const [terminalOpen, setTerminalOpen] = useState<boolean>(false)
+  const [currentPage, setCurrentPage] = useState<'home' | 'games'>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase()
+      const hash = window.location.hash.toLowerCase()
+      if (path === '/games' || path === '/games/' || hash === '#games' || hash === '#/games') {
+        return 'games'
+      }
+    }
+    return 'home'
+  })
+
   const [showSplash, setShowSplash] = useState<boolean>(() => {
     // Only show auto-splash on very first visit in this tab session
     if (typeof window !== 'undefined') {
@@ -23,6 +34,21 @@ export function App() {
     }
     return false
   })
+
+  // Synchronize browser history (Back / Forward buttons)
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.toLowerCase()
+      const hash = window.location.hash.toLowerCase()
+      if (path === '/games' || path === '/games/' || hash === '#games' || hash === '#/games') {
+        setCurrentPage('games')
+      } else {
+        setCurrentPage('home')
+      }
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
 
   // Global hotkeys: '~' opens terminal, 'Escape' closes modals
   useEffect(() => {
@@ -50,10 +76,23 @@ export function App() {
     setShowSplash(true)
   }
 
-  const handleExploreGames = () => {
-    const target = document.getElementById('games')
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' })
+  const handleNavigate = (page: 'home' | 'games', targetHash?: string) => {
+    sound.playClick()
+    setCurrentPage(page)
+    const newPath = page === 'games' ? '/games' : '/'
+    if (window.location.pathname !== newPath) {
+      window.history.pushState({}, '', newPath)
+    }
+
+    if (targetHash) {
+      setTimeout(() => {
+        const target = document.getElementById(targetHash)
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 50)
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
 
@@ -62,7 +101,7 @@ export function App() {
   }
 
   return (
-    <div className="relative min-h-screen bg-[#090A0F] text-[#F8FAFC] selection:bg-[#F5A623] selection:text-[#090A0F]">
+    <div className="relative min-h-screen bg-[#090A0F] text-[#F8FAFC] selection:bg-[#FF6A00] selection:text-[#090A0F]">
       {/* 60fps Interactive Physics & Telemetry Canvas Background */}
       <InteractiveBackground chaosLevel={chaosLevel} />
 
@@ -78,23 +117,34 @@ export function App() {
         onOpenBrandKit={() => setBrandKitOpen(true)}
         onOpenTerminal={() => setTerminalOpen(true)}
         onReplaySplash={handleReplaySplash}
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
       />
 
       {/* Main Studio Content */}
       <main className="relative z-10 flex flex-col">
-        {/* Viewport 1: Hero Experience */}
-        <HeroSection
-          chaosLevel={chaosLevel}
-          onExploreGames={handleExploreGames}
-          onOpenBrandKit={() => setBrandKitOpen(true)}
-          onTriggerAnomaly={handleTriggerAnomaly}
-        />
+        {currentPage === 'home' ? (
+          <>
+            {/* Viewport 1: Clean, Gluff-Free Studio Hero */}
+            <HeroSection
+              chaosLevel={chaosLevel}
+              onExploreGames={() => handleNavigate('games')}
+              onOpenBrandKit={() => setBrandKitOpen(true)}
+              onTriggerAnomaly={handleTriggerAnomaly}
+            />
 
-        {/* Viewport 2: Featured Game Catalog (Hallucinated Dungeons, Do Not Press Submit, Project Redacted) */}
-        <GameCatalogSection games={GAMES} />
-
-        {/* Viewport 3: Studio Philosophy & Manifesto */}
-        <PhilosophySection />
+            {/* Viewport 2: Studio Philosophy & Manifesto */}
+            <PhilosophySection />
+          </>
+        ) : (
+          /* Dedicated Games Page View */
+          <div className="pt-6 pb-12">
+            <GameCatalogSection
+              games={GAMES}
+              onBackToHome={() => handleNavigate('home')}
+            />
+          </div>
+        )}
       </main>
 
       {/* Master Studio Footer */}
@@ -102,9 +152,10 @@ export function App() {
         onOpenBrandKit={() => setBrandKitOpen(true)}
         onOpenTerminal={() => setTerminalOpen(true)}
         onReplaySplash={handleReplaySplash}
+        onNavigate={handleNavigate}
       />
 
-      {/* Interactive Brand Assets & SVG Suite Viewer Modal */}
+      {/* Interactive Brand Assets Viewer Modal */}
       <BrandAssetsModal
         isOpen={brandKitOpen}
         onClose={() => setBrandKitOpen(false)}
