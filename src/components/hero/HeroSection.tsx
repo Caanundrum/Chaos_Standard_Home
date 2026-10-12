@@ -62,6 +62,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     setClickCount(0)
   }
 
+  const [logoWiggle, setLogoWiggle] = useState<boolean>(false)
+
+  const handleLogoClick = () => {
+    sound.playHover()
+    setLogoWiggle(true)
+    setTimeout(() => setLogoWiggle(false), 500)
+  }
+
   return (
     <section id="hero" className="relative min-h-[92vh] pt-28 pb-20 flex flex-col justify-center items-center px-4 sm:px-6 overflow-hidden">
       {/* Background Radial Glow */}
@@ -75,9 +83,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <span>ZERO INSTALL</span>
       </div>
 
-      {/* Main Emblem Showcase with Interactive Reaction */}
-      <div className="relative mb-8 group cursor-pointer" onClick={handleForbiddenClick} title="Poke the Terminal">
-        <div className="w-40 h-40 sm:w-48 sm:h-48 relative z-10 transition-transform duration-500 group-hover:scale-105">
+      {/* Main Emblem Showcase with Independent Mascot Reaction */}
+      <div 
+        className="relative mb-8 group cursor-pointer select-none" 
+        onClick={handleLogoClick} 
+        title="Chaos Standard Terminal"
+      >
+        <div className={`w-40 h-40 sm:w-48 sm:h-48 relative z-10 transition-transform duration-300 group-hover:scale-105 active:scale-95 ${
+          logoWiggle ? 'animate-bounce' : ''
+        }`}>
           <ChaosLogo variant="symbol" theme="dark" interactive={false} />
         </div>
         <div className="absolute inset-0 bg-[#FF6A00]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
