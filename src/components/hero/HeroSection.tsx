@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (isCompleted) {
       // Clear payoff: Directly launch the actual game!
       sound.playClick()
-      window.open('https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/', '_blank', 'noopener,noreferrer')
+      window.open('https://dnps.chaosstandard.com', '_blank', 'noopener,noreferrer')
       return
     }
 

@@ -85,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-3 text-sm text-[#94A3B8]">
               <li>
                 <a
-                  href="https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/"
+                  href="https://hd.chaosstandard.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => sound.playClick()}
@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/"
+                  href="https://dnps.chaosstandard.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => sound.playClick()}

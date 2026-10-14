@@ -22,7 +22,7 @@ export const GAMES: GameInfo[] = [
       bgGradient: 'from-[#171424] via-[#0E0C17] to-[#08070E]',
       borderGlow: 'hover:border-[#8B5CF6]/50 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)]'
     },
-    previewUrl: 'https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/'
+    previewUrl: 'https://hd.chaosstandard.com'
   },
   {
     id: 'do-not-press-submit',
@@ -45,7 +45,7 @@ export const GAMES: GameInfo[] = [
       bgGradient: 'from-[#141B26] via-[#0E121B] to-[#07090E]',
       borderGlow: 'hover:border-[#00E5FF]/50 hover:shadow-[0_0_35px_rgba(0,229,255,0.25)]'
     },
-    previewUrl: 'https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/'
+    previewUrl: 'https://dnps.chaosstandard.com'
   },
   {
     id: 'project-unannounced',

@@ -228,7 +228,7 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href="https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/"
+                  href="https://hd.chaosstandard.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => sound.playClick()}
@@ -353,7 +353,7 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href="https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/"
+                  href="https://dnps.chaosstandard.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => sound.playClick()}

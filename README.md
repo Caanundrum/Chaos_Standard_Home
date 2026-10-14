@@ -30,7 +30,7 @@
 *Tabletop RPG Soul × Generative Fantasy Intelligence*  
 An ambitious AI-driven multiplayer fantasy role-playing experience inspired by classic pen-and-paper games. The bespoke AI Dungeon Master tracks deep world memory, authors dynamic encounters, and responds to player agency without ever feeling like a generic chatbot.  
 - **Status:** Alpha 3 Staging Playable
-- **Live Staging URL:** [https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/](https://hd-a3-player--hd-a3-staging.us-central1.hosted.app/)
+- **Live Staging URL:** [https://hd.chaosstandard.com](https://hd.chaosstandard.com)
 - **Genre:** AI Multiplayer Tabletop RPG
 - **Platform:** Browser-Native (Zero Install)
 
@@ -38,7 +38,7 @@ An ambitious AI-driven multiplayer fantasy role-playing experience inspired by c
 *The Antagonistic User Interface Experience*  
 A humorous, interactive browser game where the interface itself becomes part of the experience. The player is confronted with simple instructions and an increasingly questionable relationship with the software.  
 - **Status:** Prototype Preview Available
-- **Live Development Preview:** [https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/](https://donotpresssubmit--donotpresssubmit.us-central1.hosted.app/)
+- **Live Development Preview:** [https://dnps.chaosstandard.com](https://dnps.chaosstandard.com)
 - **Platform:** Browser-Native
 
 ### Game 3: Project [REDACTED]
