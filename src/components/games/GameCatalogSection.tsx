@@ -545,30 +545,6 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
           </div>
         </article>
       </div>
-
-      {/* Return to Studio Manifesto Banner */}
-      {onBackToHome && (
-        <div className="mt-20 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="font-mono text-xs text-[#FF6A00] uppercase tracking-wider font-bold mb-1">
-              CHAOS STANDARD STUDIO
-            </div>
-            <p className="text-sm text-[#94A3B8]">
-              Want to learn more about our design philosophy and how we build browser games with AI?
-            </p>
-          </div>
-          <button
-            onClick={() => {
-              sound.playClick()
-              onBackToHome()
-            }}
-            className="flex-shrink-0 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-mono text-xs font-bold transition-all cursor-pointer flex items-center gap-2 hover:border-[#FF6A00]/50"
-          >
-            <ArrowLeft className="w-4 h-4 text-[#FF6A00]" />
-            <span>Studio About &amp; Philosophy</span>
-          </button>
-        </div>
-      )}
     </section>
   )
 }

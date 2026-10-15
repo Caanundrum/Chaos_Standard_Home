@@ -134,7 +134,6 @@ export function App() {
             onExploreGames={() => handleNavigate('games')}
             onOpenBrandKit={() => setBrandKitOpen(true)}
             onTriggerAnomaly={handleTriggerAnomaly}
-            onNavigateToAbout={() => handleNavigate('about')}
           />
         )}
 

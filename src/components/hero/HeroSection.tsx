@@ -8,7 +8,6 @@ interface HeroSectionProps {
   onExploreGames: () => void
   onOpenBrandKit: () => void
   onTriggerAnomaly: () => void
-  onNavigateToAbout?: () => void
 }
 
 const FORBIDDEN_STEPS = [
@@ -24,8 +23,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   chaosLevel: _chaosLevel,
   onExploreGames,
   onOpenBrandKit,
-  onTriggerAnomaly,
-  onNavigateToAbout
+  onTriggerAnomaly
 }) => {
   const [clickCount, setClickCount] = useState<number>(0)
 
@@ -176,21 +174,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </button>
         </div>
       </div>
-
-      {/* Quick link button to About page */}
-      {onNavigateToAbout && (
-        <button
-          onClick={() => {
-            sound.playClick()
-            onNavigateToAbout()
-          }}
-          className="mt-10 inline-flex items-center gap-2 text-xs font-mono text-[#64748B] hover:text-[#FF6A00] transition-colors cursor-pointer group"
-          title="Learn about Chaos Standard studio"
-        >
-          <span className="tracking-widest uppercase">ABOUT CHAOS STANDARD</span>
-          <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-        </button>
-      )}
     </section>
   )
 }
