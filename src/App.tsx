@@ -4,7 +4,6 @@ import { Header } from './components/navigation/Header'
 import { HeroSection } from './components/hero/HeroSection'
 import { GameCatalogSection } from './components/games/GameCatalogSection'
 import { PhilosophySection } from './components/philosophy/PhilosophySection'
-import { Footer } from './components/footer/Footer'
 import { BrandAssetsModal } from './components/brand/BrandAssetsModal'
 import { ChaosTerminal } from './components/terminal/ChaosTerminal'
 import { StudioSplashReveal } from './components/splash/StudioSplashReveal'
@@ -159,14 +158,6 @@ export function App() {
           </div>
         )}
       </main>
-
-      {/* Master Studio Footer */}
-      <Footer
-        onOpenBrandKit={() => setBrandKitOpen(true)}
-        onOpenTerminal={() => setTerminalOpen(true)}
-        onReplaySplash={handleReplaySplash}
-        onNavigate={handleNavigate}
-      />
 
       {/* Interactive Brand Assets Viewer Modal */}
       <BrandAssetsModal
