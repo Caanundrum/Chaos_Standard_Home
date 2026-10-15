@@ -364,7 +364,7 @@ export const ChaosSplash = ({ onFinish }: { onFinish: () => void }) => {
 
         {/* Footer */}
         <div className="px-6 py-4 bg-[#11131B] border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#64748B]">
-          <span>© 2025 CHAOS STANDARD</span>
+          <span>© 2026 CHAOS STANDARD</span>
           <button
             onClick={() => {
               sound.playClick()

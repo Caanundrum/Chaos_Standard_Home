@@ -109,7 +109,7 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
       particleCount: 120,
       spread: 70,
       origin: { y: 0.7 },
-      colors: ['#00E5FF', '#FF2A5F', '#F5A623', '#FFFFFF']
+      colors: ['#FF6A00', '#F5A623', '#FF8C33', '#94A3B8']
     })
 
     setTimeout(() => {
@@ -538,7 +538,7 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
               </div>
 
               <div className="mt-4 flex items-center justify-between font-mono text-[10px] text-[#64748B]">
-                <span>ENCRYPTED VAULT // 2025</span>
+                <span>ENCRYPTED VAULT // 2026</span>
                 <span>TUNING UNLOCKS SIGNALS</span>
               </div>
             </div>

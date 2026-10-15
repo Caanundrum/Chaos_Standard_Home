@@ -184,11 +184,11 @@ UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
       aria-modal="true"
       aria-label="Chaos Standard Developer CLI"
     >
-      <div className="w-full max-w-3xl h-[520px] bg-[#07090E] border border-[#00E5FF]/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden font-mono text-xs">
+      <div className="w-full max-w-3xl h-[520px] bg-[#07090E] border border-[#FF6A00]/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden font-mono text-xs">
         {/* Terminal Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-[#0F131C] border-b border-white/10">
           <div className="flex items-center gap-2">
-            <Terminal className="w-4 h-4 text-[#00E5FF]" />
+            <Terminal className="w-4 h-4 text-[#FF6A00]" />
             <span className="text-[#F8FAFC] font-bold">CHAOS STANDARD // DEV CONSOLE</span>
             <span className="text-[#64748B] text-[10px] hidden sm:inline">[CALIBRATION: {chaosLevel}%]</span>
           </div>
@@ -198,7 +198,7 @@ UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
               sound.playClick()
               onClose()
             }}
-            className="p-1 rounded hover:bg-white/10 text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
+            className="p-1 rounded hover:bg-white/10 text-[#94A3B8] hover:text-[#F8FAFC] transition-colors cursor-pointer"
             aria-label="Close Terminal"
           >
             <X className="w-4 h-4" />
@@ -211,7 +211,7 @@ UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
             <div key={log.id} className="space-y-1">
               {log.command && (
                 <div className="flex items-center gap-2 text-[#94A3B8]">
-                  <span className="text-[#00E5FF]">&gt;</span>
+                  <span className="text-[#FF6A00]">&gt;</span>
                   <span className="text-[#F8FAFC] font-semibold">{log.command}</span>
                 </div>
               )}
@@ -219,11 +219,11 @@ UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
                 <div
                   className={`pl-4 whitespace-pre-wrap ${
                     log.type === 'warn'
-                      ? 'text-[#FF2A5F]'
+                      ? 'text-[#FF8C33]'
                       : log.type === 'success'
                       ? 'text-[#F5A623]'
                       : log.type === 'system'
-                      ? 'text-[#00E5FF]'
+                      ? 'text-[#FF6A00]'
                       : 'text-[#CBD5E1]'
                   }`}
                 >
@@ -237,7 +237,7 @@ UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
 
         {/* Terminal Input Bar */}
         <form onSubmit={handleCommand} className="flex items-center px-4 py-3 bg-[#0C0F17] border-t border-white/10">
-          <span className="text-[#00E5FF] mr-2 font-bold">&gt;</span>
+          <span className="text-[#FF6A00] mr-2 font-bold">&gt;</span>
           <input
             ref={inputRef}
             type="text"
@@ -248,7 +248,7 @@ UNCONVENTIONAL BROWSER GAMES MADE WITH AI.`
           />
           <button
             type="submit"
-            className="p-1.5 rounded bg-white/10 hover:bg-[#00E5FF] hover:text-[#090A0F] text-[#F8FAFC] transition-colors cursor-pointer"
+            className="p-1.5 rounded bg-white/10 hover:bg-[#FF6A00] hover:text-[#090A0F] text-[#F8FAFC] transition-colors cursor-pointer"
             title="Execute Command"
           >
             <CornerDownLeft className="w-3.5 h-3.5" />

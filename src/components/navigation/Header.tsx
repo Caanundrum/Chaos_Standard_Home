@@ -130,11 +130,11 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="hidden sm:flex items-center gap-4">
           {/* Chaos Calibrator */}
           <div
-            className="relative flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#11131B] border border-white/10 hover:border-white/20 transition-all"
+            className="relative flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#11131B] border border-white/10 hover:border-[#FF6A00]/30 transition-all"
             onMouseEnter={() => setShowChaosTooltip(true)}
             onMouseLeave={() => setShowChaosTooltip(false)}
           >
-            <Sliders className={`w-3.5 h-3.5 ${chaosLevel > 60 ? 'text-[#FF2A5F] animate-spin' : 'text-[#FF6A00]'}`} />
+            <Sliders className={`w-3.5 h-3.5 ${chaosLevel > 60 ? 'text-[#F5A623] animate-spin' : 'text-[#FF6A00]'}`} />
             <div className="flex flex-col">
               <div className="flex items-center justify-between gap-2">
                 <span className="font-mono text-[9px] uppercase tracking-wider text-[#64748B]">
@@ -166,11 +166,11 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Sound Toggle */}
           <button
             onClick={toggleSound}
-            className="p-2 rounded-lg bg-[#11131B] border border-white/10 hover:border-[#00E5FF]/40 text-[#94A3B8] hover:text-[#00E5FF] transition-all"
+            className="p-2 rounded-lg bg-[#11131B] border border-white/10 hover:border-[#FF6A00]/40 text-[#94A3B8] hover:text-[#FF6A00] transition-all cursor-pointer"
             title={muted ? 'Unmute Procedural Audio' : 'Mute Audio'}
             aria-label="Toggle Sound"
           >
-            {muted ? <VolumeX className="w-4 h-4 text-[#FF2A5F]" /> : <Volume2 className="w-4 h-4 text-[#00E5FF]" />}
+            {muted ? <VolumeX className="w-4 h-4 text-[#64748B]" /> : <Volume2 className="w-4 h-4 text-[#FF6A00]" />}
           </button>
 
           {/* Dev Terminal Trigger */}
@@ -179,10 +179,10 @@ export const Header: React.FC<HeaderProps> = ({
               sound.playClick()
               onOpenTerminal()
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11131B] border border-white/10 hover:border-[#00E5FF]/50 text-xs font-mono text-[#94A3B8] hover:text-[#00E5FF] transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11131B] border border-white/10 hover:border-[#FF6A00]/50 text-xs font-mono text-[#94A3B8] hover:text-[#FF6A00] transition-all cursor-pointer"
             title="Open Interactive Studio Terminal"
           >
-            <Terminal className="w-3.5 h-3.5 text-[#00E5FF]" />
+            <Terminal className="w-3.5 h-3.5 text-[#FF6A00]" />
             <span>~ CLI</span>
           </button>
         </div>
@@ -238,9 +238,9 @@ export const Header: React.FC<HeaderProps> = ({
               setMobileMenuOpen(false)
               onReplaySplash()
             }}
-            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#00E5FF] flex items-center gap-2"
+            className="text-left text-base font-semibold text-[#F8FAFC] hover:text-[#FF6A00] flex items-center gap-2"
           >
-            <Sparkles className="w-4 h-4 text-[#00E5FF]" />
+            <Sparkles className="w-4 h-4 text-[#FF6A00]" />
             <span>Replay Logo Reveal</span>
           </button>
           <button
@@ -249,7 +249,7 @@ export const Header: React.FC<HeaderProps> = ({
               setMobileMenuOpen(false)
               onOpenTerminal()
             }}
-            className="text-left text-base font-mono text-[#00E5FF] flex items-center gap-2"
+            className="text-left text-base font-mono text-[#FF6A00] flex items-center gap-2"
           >
             <Terminal className="w-4 h-4" />
             <span>Open Dev Terminal (~ CLI)</span>
