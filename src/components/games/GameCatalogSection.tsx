@@ -134,7 +134,7 @@ export const GameCatalogSection: React.FC<GameCatalogSectionProps> = ({
   }
 
   return (
-    <section id="games" className="relative pt-24 pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <section id="games" className="relative pt-8 sm:pt-10 pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
       {/* Top Breadcrumb & Return to Home */}
       {onBackToHome && (
         <div className="mb-8">

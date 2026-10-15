@@ -71,12 +71,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   }
 
   return (
-    <section id="hero" className="relative min-h-[92vh] pt-28 pb-20 flex flex-col justify-center items-center px-4 sm:px-6 overflow-hidden">
+    <section id="hero" className="relative w-full h-full flex flex-col justify-center items-center px-4 sm:px-6 py-2 overflow-hidden">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#FF6A00]/15 via-[#FF8C33]/10 to-transparent rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#FF6A00]/15 via-[#FF8C33]/10 to-transparent rounded-full blur-[120px] pointer-events-none -z-10" />
 
       {/* Calibration Tag */}
-      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#11131B]/90 border border-white/10 text-xs font-mono text-[#94A3B8] mb-8 shadow-lg backdrop-blur-md">
+      <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#11131B]/90 border border-white/10 text-[11px] sm:text-xs font-mono text-[#94A3B8] mb-4 sm:mb-5 shadow-lg backdrop-blur-md">
         <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping" />
         <span className="text-[#FF6A00] font-semibold">BROWSER GAMES MADE WITH AI</span>
         <span className="text-white/20">//</span>
@@ -85,11 +85,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Main Emblem Showcase with Independent Mascot Reaction */}
       <div 
-        className="relative mb-8 group cursor-pointer select-none" 
+        className="relative mb-4 sm:mb-5 group cursor-pointer select-none" 
         onClick={handleLogoClick} 
         title="Chaos Standard Terminal"
       >
-        <div className={`w-40 h-40 sm:w-48 sm:h-48 relative z-10 transition-transform duration-300 group-hover:scale-105 active:scale-95 ${
+        <div className={`w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 relative z-10 transition-transform duration-300 group-hover:scale-105 active:scale-95 ${
           logoWiggle ? 'animate-bounce' : ''
         }`}>
           <ChaosLogo variant="symbol" theme="dark" interactive={false} />
@@ -99,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Monumental Headline */}
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#F8FAFC] leading-[1.08] mb-6">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#F8FAFC] leading-[1.1] mb-3 sm:mb-4">
           UNCONVENTIONAL{' '}
           <span className="bg-gradient-to-r from-[#FF8C33] via-[#FFAE66] to-[#FF6A00] bg-clip-text text-transparent">
             BROWSER GAMES
@@ -107,12 +107,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           MADE WITH AI.
         </h1>
 
-        <p className="text-lg sm:text-xl text-[#94A3B8] max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
+        <p className="text-sm sm:text-base md:text-lg text-[#94A3B8] max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8 font-normal">
           A collection of browser games created with AI. Unconventional mechanics, fourth-wall breaks, and software that probably has opinions about you. Instant play, zero install.
         </p>
 
         {/* Primary Action Buttons */}
-        <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-4 mb-14 max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
           {/* Explore Games Button */}
           <button
             onClick={() => {

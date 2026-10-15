@@ -105,7 +105,9 @@ export function App() {
   }
 
   return (
-    <div className="relative min-h-screen bg-[#090A0F] text-[#F8FAFC] selection:bg-[#FF6A00] selection:text-[#090A0F] flex flex-col justify-between">
+    <div className={`relative min-h-screen bg-[#090A0F] text-[#F8FAFC] selection:bg-[#FF6A00] selection:text-[#090A0F] flex flex-col justify-between ${
+      currentPage === 'home' ? 'h-screen overflow-hidden' : 'overflow-x-hidden'
+    }`}>
       {/* 60fps Interactive Physics & Telemetry Canvas Background */}
       <InteractiveBackground chaosLevel={chaosLevel} />
 
@@ -126,7 +128,9 @@ export function App() {
       />
 
       {/* Main Studio Content */}
-      <main className="relative z-10 flex flex-col flex-1">
+      <main className={`relative z-10 flex flex-col flex-1 ${
+        currentPage === 'home' ? 'h-[calc(100vh-4.5rem)] sm:h-[calc(100vh-5rem)] overflow-hidden justify-center' : ''
+      }`}>
         {currentPage === 'home' && (
           /* Viewport 1: Pure, Iconic Studio Landing */
           <HeroSection

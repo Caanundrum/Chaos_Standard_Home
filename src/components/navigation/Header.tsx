@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-[#090A0F]/85 backdrop-blur-xl border-b border-white/8 transition-all">
+    <header className="sticky top-0 left-0 right-0 z-40 w-full bg-[#090A0F]/90 backdrop-blur-xl border-b border-white/8 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
         {/* Studio Identity Brand Lockup */}
         <button
